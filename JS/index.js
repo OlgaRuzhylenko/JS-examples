@@ -82,9 +82,9 @@
 //             return wordInput.length % 2 === 0;
 //         }
 //             if (isEvenLength(wordInput)) {
-//             console.log(wordInput.slice(wordInput.length/2-1, wordInput.length/2 + 1));
+//                 alert(wordInput.slice(wordInput.length/2-1, wordInput.length/2 + 1));
 //         }       else {
-//                 console.log(wordInput.slice(wordInput.length/2, wordInput.length/2 + 1));
+//             alert(wordInput.slice(wordInput.length/2, wordInput.length/2 + 1));
 //         }
 //     }
 
