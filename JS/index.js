@@ -108,3 +108,4 @@
 //  For “User” show “Good evening, dear User!”
 //  For “Admin” show “Good evening, dear Admin!”
 // P.S.: щоб отримати інформацію про поточний час для реалізації п. 3 завдання, створіть змінну: const hours = new Date().getHours()
+
