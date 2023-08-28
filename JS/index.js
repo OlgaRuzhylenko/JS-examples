@@ -98,9 +98,12 @@
 //  If the input length less than 4 symbols - show “I don't know any users having name length less than 4 symbols”.
 
 //  If it’s another string – then show “I don’t know you”.
+
 //  If the visitor enters "User" or "Admin", then prompt for a password.
+
 // Step 2. Check password:
 //  For an empty string or cancelled input, show “Canceled.”
+
 //  For login “User” correct password is “UserPass”, for “Admin” correct password is  “RootPass”.
 // In other case, show “Wrong password”.
 // Step 3. Greets the user appropriately:
@@ -115,9 +118,31 @@
 
 const userLogin = prompt('Please enter your login');
 console.log(userLogin);
+
 if (userLogin === '' || userLogin === null) {
     alert('Canceled');
-}
-if (userLogin.length > 0 && userLogin.length < 4) {
+} else if (userLogin.length < 4) {
     alert("I don't know any users having name length less than 4 symbols");
-}
+    
+} else {
+    let userPassword;
+    if (userLogin === "User" || (userLogin === "Admin")) {
+    const userPassword = prompt("Please enter a password");
+    console.log(userPassword);
+
+        if (userPassword === '' || userPassword === null) {
+        alert('Canceled');
+        }
+    } 
+    else {
+        alert("I don’t know you");
+    }
+        }
+
+if (userLogin === "User" &&  userPassword === 'UserPass') {
+    alert('Hello, User');
+} else if (userLogin === "Admin" &&  userPassword === 'RootPass') {
+    alert('Hey, Admin');
+} else (
+    alert('Wrong password');
+)
