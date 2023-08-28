@@ -92,8 +92,11 @@
 // Write the code which verify user rights.
 // Step 1. Check login
 //  Ask user for a login // use prompt()
+
 //  If the input is an empty line or Esc – show “Canceled.” // for showing - use alert()
+
 //  If the input length less than 4 symbols - show “I don't know any users having name length less than 4 symbols”.
+
 //  If it’s another string – then show “I don’t know you”.
 //  If the visitor enters "User" or "Admin", then prompt for a password.
 // Step 2. Check password:
@@ -109,3 +112,12 @@
 //  For “Admin” show “Good evening, dear Admin!”
 // P.S.: щоб отримати інформацію про поточний час для реалізації п. 3 завдання, створіть змінну: const hours = new Date().getHours()
 
+
+const userLogin = prompt('Please enter your login');
+console.log(userLogin);
+if (userLogin === '' || userLogin === null) {
+    alert('Canceled');
+}
+if (userLogin.length > 0 && userLogin.length < 4) {
+    alert("I don't know any users having name length less than 4 symbols");
+}
