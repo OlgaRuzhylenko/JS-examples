@@ -116,33 +116,40 @@
 // P.S.: щоб отримати інформацію про поточний час для реалізації п. 3 завдання, створіть змінну: const hours = new Date().getHours()
 
 
-const userLogin = prompt('Please enter your login');
-console.log(userLogin);
+// const userLogin = prompt('Please enter your login');
+// console.log(userLogin);
 
-if (userLogin === '' || userLogin === null) {
-    alert('Canceled');
-} else if (userLogin.length < 4) {
-    alert("I don't know any users having name length less than 4 symbols");
+// if (userLogin === '' || userLogin === null) {
+//     alert('Canceled');
+// } else if (userLogin.length < 4) {
+//     alert("I don't know any users having name length less than 4 symbols");
     
-} else {
-    let userPassword;
-    if (userLogin === "User" || (userLogin === "Admin")) {
-    const userPassword = prompt("Please enter a password");
-    console.log(userPassword);
+// } else {
+//     let userPassword;
+//     if (userLogin === "User" || (userLogin === "Admin")) {
+//     const userPassword = prompt("Please enter a password");
+//     console.log(userPassword);
 
-        if (userPassword === '' || userPassword === null) {
-        alert('Canceled');
-        }
-    } 
-    else {
-        alert("I don’t know you");
-    }
-        }
+//         if (userPassword === '' || userPassword === null) {
+//         alert('Canceled');
+//         }
+//     } 
+//     else {
+//         alert("I don’t know you");
+//     }
+//         }
 
-if (userLogin === "User" &&  userPassword === 'UserPass') {
-    alert('Hello, User');
-} else if (userLogin === "Admin" &&  userPassword === 'RootPass') {
-    alert('Hey, Admin');
-} else (
-    alert('Wrong password');
-)
+// if (userLogin === "User" &&  userPassword === 'UserPass') {
+//     alert('Hello, User');
+// } else if (userLogin === "Admin" &&  userPassword === 'RootPass') {
+//     alert('Hey, Admin');
+// } else (
+//     alert('Wrong password');
+// )
+const title = 'Arrays for begginers';
+
+console.log(title.toLowerCase());
+console.log(title.toLowerCase()).join('-');
+
+//.join('-'));
+
