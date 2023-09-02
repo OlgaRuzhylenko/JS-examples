@@ -109,3 +109,21 @@
 //  For “Admin” show “Good evening, dear Admin!”
 // P.S.: щоб отримати інформацію про поточний час для реалізації п. 3 завдання, створіть змінну: const hours = new Date().getHours()
 
+// function findLongestWord(string) {
+  
+//     console.log(string);
+//     const array = (string.split(" "));
+//     console.log(array);
+
+// let longestWord = "";
+// for ( let word of array) {
+//     if (word.length > longestWord.length) {
+//         longestWord = word;
+//     }
+// }
+
+// return longestWord;
+
+//   }
+//   console.log(findLongestWord("Google do a roll"))
+
