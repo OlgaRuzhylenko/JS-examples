@@ -127,3 +127,59 @@
 //   }
 //   console.log(findLongestWord("Google do a roll"))
 
+
+// При завантаженні сторінки користувачу пропонується у prompt ввести число.
+//     Те, що вводить користувач, додається до значення змінної total.
+// Операція вводу числа триває до тих пір, поки користувач не натисне кнопку Cancel в prompt.
+// Після того, як користувач припинив вводити числа і натиснув на кнопку Cancel,
+//     показувати alert з рядком "Загальна сума введених чисел дорівнює [число]."
+// Робити перевірку, що користувач ввів саме число, а не довільні символи, не потрібно.
+
+// let userNumber = prompt("введіть число");
+// let total = 0;
+// do {
+//     total += Number(userNumber);
+//     userNumber = prompt("введіть число");
+// } while (userNumber);
+// console.log(`Загальна сума введених чисел дорівнює ${total}`);
+
+// Напишіть функцію, що прибирає значення, які повторюються
+// Очікується[1, 2, 3, 1, 2] => [1, 2, 3]
+
+// function deleteRepeat (number) {
+//     const newArr=[];
+//     // for (let i = 0; i < number.length; i+=1) {
+//     //     if (!newArr.includes(number[i])) {
+//     //         newArr.push(number[i]);
+//     //     }
+//     // }
+
+//     for (const item of number) {
+//         if (!newArr.includes(item)) {
+//               newArr.push(item);
+//          }
+//     }
+//     console.log(newArr);
+// }
+// deleteRepeat([1, 2, 3, 1, 2]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
