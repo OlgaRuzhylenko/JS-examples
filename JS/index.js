@@ -369,3 +369,21 @@
 // const arr = a.concat(c, b[0], b[1])
 // console.log(arr)
 // console.log(a)
+
+// Спільними елементами масивів називають ті елементи, які присутні у всіх масивах.
+// Наприклад, у двох масивах [1, 3, 5] і [0, 8, 5, 3] спільними будуть числа 3 і 5, оскільки вони присутні в обох вихідних масивах. А числа 0, 1 і 8 присутні тільки в одному з масивів.
+// Напиши функцію getCommonElements(array1, array2), яка отримує два масиви довільної довжини в параметри array1 і array2, і повертає новий масив, що складається з тих елементів, які присутні в обох вихідних масивах.
+
+function getCommonElements(array1, array2) {
+   
+  const newArr = [];
+    for (let i = 0; i < array1.length; i+=1) {
+        const element = array1[i];
+        
+       if (array2.includes(element) ) {
+       newArr.push(element);
+       }
+    }
+ return newArr;
+  }
+  console.log(getCommonElements([1, 2, 3], [2, 4]));
