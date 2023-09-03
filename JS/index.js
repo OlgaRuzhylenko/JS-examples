@@ -163,16 +163,46 @@
 // }
 // deleteRepeat([1, 2, 3, 1, 2]);
 
+// function filterArray(numbers, value) {
+
+//     const filteredNumbers = [];
+  
+//     for (const item of numbers) {
+//       const number = numbers[item];
+  
+//       if (number > value) {
+//         filteredNumbers.push(number);
+//       }
+//     }
+  
+//     return filteredNumbers;
+   
+//   }
+//   console.log(filterArray([12, 24, 8, 41, 76], 38));
 
 
+// function getEvenNumbers(start, end) {
+  
+//  const newArray = [];
+//    for (let i = start; i <= end; i+=1) {
+//      if (i % 2 === 0) {
+//       (newArray.push(i));
+//      }
+//    }
+//   return(newArray);
+//    }
+//    console.log(getEvenNumbers(2, 5));
 
-
-
-
-
-
-
-
+function includes(array, value) {
+   
+  for (const item of array) {
+    if (item === value) {
+        console.log('true');
+    }
+  }
+    
+  }
+console.log(([1, 2, 3, 4, 5], 3));
 
 
 
