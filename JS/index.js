@@ -115,7 +115,7 @@
 //  For “Admin” show “Good evening, dear Admin!”
 // P.S.: щоб отримати інформацію про поточний час для реалізації п. 3 завдання, створіть змінну: const hours = new Date().getHours()
 
-<<<<<<< HEAD
+
 // function findLongestWord(string) {
   
 //     console.log(string);
@@ -152,100 +152,6 @@
 
 // Напишіть функцію, що прибирає значення, які повторюються
 // Очікується[1, 2, 3, 1, 2] => [1, 2, 3]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // function deleteRepeat (number) {
@@ -295,27 +201,17 @@
 //    }
 //    console.log(getEvenNumbers(2, 5));
 
-function includes(array, value) {
+// function includes(array, value) {
    
-  for (const item of array) {
-    if (item === value) {
-        console.log('true');
-    }
-  }
+//   for (const item of array) {
+//     if (item === value) {
+//         console.log('true');
+//     }
+//   }
     
-  }
-console.log(([1, 2, 3, 4, 5], 3));
+//   }
+// console.log(([1, 2, 3, 4, 5], 3));
 
-
-
-
-
-
-
-
-
-
-=======
 
 // const userLogin = prompt('Please enter your login');
 // console.log(userLogin);
@@ -575,17 +471,90 @@ console.log(([1, 2, 3, 4, 5], 3));
 // Наприклад, у двох масивах [1, 3, 5] і [0, 8, 5, 3] спільними будуть числа 3 і 5, оскільки вони присутні в обох вихідних масивах. А числа 0, 1 і 8 присутні тільки в одному з масивів.
 // Напиши функцію getCommonElements(array1, array2), яка отримує два масиви довільної довжини в параметри array1 і array2, і повертає новий масив, що складається з тих елементів, які присутні в обох вихідних масивах.
 
-function getCommonElements(array1, array2) {
+// function getCommonElements(array1, array2) {
    
-  const newArr = [];
-    for (let i = 0; i < array1.length; i+=1) {
-        const element = array1[i];
+//   const newArr = [];
+//     for (let i = 0; i < array1.length; i+=1) {
+//         const element = array1[i];
         
-       if (array2.includes(element) ) {
-       newArr.push(element);
-       }
-    }
- return newArr;
-  }
-  console.log(getCommonElements([1, 2, 3], [2, 4]));
->>>>>>> 769b537d73b370200c88e9e1ae2d15870bc54d3a
+//        if (array2.includes(element) ) {
+//        newArr.push(element);
+//        }
+//     }
+//  return newArr;
+//   }
+//   console.log(getCommonElements([1, 2, 3], [2, 4]));
+
+// const bookShelf = {
+//   books: ["The Last Kingdom"],
+//   getBooks() {
+//     console.log(this);
+//   },
+// };
+
+// // Перед крапкою знаходиться об'єкт bookShelf,
+// // тому, викликаючи метод, this буде зберігати посилання на нього.
+// bookShelf.getBooks(); 
+
+// const bookShelf = {
+//   books: ["The Last Kingdom"],
+//   getBooks() {
+//     return this.books;
+//   },
+//   addBook(bookName) {
+//     this.books.push(bookName);
+//   },
+//   removeBook(bookName) {
+//     const bookIndex = this.books.indexOf(bookName);
+//     this.books.splice(bookIndex, 1);
+//   },
+// };
+
+// console.log(bookShelf.getBooks());
+// bookShelf.addBook("The Mist");
+// bookShelf.addBook("Dream Guardian");
+// console.log(bookShelf.getBooks()); 
+// bookShelf.removeBook("The Mist");
+// console.log(bookShelf.getBooks());
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   rating: 8.38,
+// };
+
+// for (const key in book) {
+//   // Ключ
+//   console.log(key);
+//   // Значення властивості з таким ключем
+//   console.log(book[key]);
+// }
+
+// const animal = {
+//   legs: 4,
+// };
+// const dog = Object.create(animal);
+// dog.name = "Манго";
+// console.log(dog); 
+// console.log(dog.name);
+// console.log(dog.legs);
+// console.log("name" in dog); // true
+// console.log("legs" in dog); // true
+// // console.log(dog.hasOwnProperty("name")); // true
+// // console.log(dog.hasOwnProperty("legs")); // false
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   rating: 8.38,
+// };
+// const keys = Object.keys(book);
+// console.log(keys); // ['title', 'author', 'rating']
+
+// const values = Object.values(book);
+// console.log(values); // ['The Last Kingdom', 'Bernard Cornwell', 8.38]
+
+// const entries = Object.entries(book);
+// console.log(entries);
+// // [["title", "The Last Kingdom"], ["author", "Bernard Cornwell"], ["rating", 8.38]]
