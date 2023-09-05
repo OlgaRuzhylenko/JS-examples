@@ -67,3 +67,58 @@
 
 // 6. Форматування посилання (includes та логічне "І")
 // Напиши скрипт, який перевіряє чи закінчується значення змінної link символом /. Якщо ні - додай до кінця значення link цей символ, але тільки в тому випадку, якщо в  link є підрядок "my-site". Використовуй if...else
+// const link = 'website';
+// if (!link.endsWith("/") && link.includes("my-site")) {
+// link + "/";
+// }
+// console.log(link);
+
+// 7. форматування посилання (тернарний оператор). Рефакторинг 
+// const link = 'website';
+// !link.endsWith("/") && link.includes("my-site") ?  console.log(link + "/") : console.log(link);
+
+// 8. Дедлайн здачі проекту. (if...else)
+// Якщо до дедлайну 0 днів = виведи рядок "Сьогодні";
+// Якщо до дедлайну 1 день = виведи рядок "Завтра";
+// Якщо до дедлайну 2 дні = виведи рядок "Післязавтра";
+// // Якщо до дедлайну 3+ днів = виведи рядок "Дата у майбутньому";
+// const daysUntilDeadline = 0;
+// console.log(typeof(daysUntilDeadline))
+
+// if (daysUntilDeadline >= 3) {
+//     console.log("Дата у майбутньому");
+// } else if (daysUntilDeadline === 2){
+//     console.log("Післязавтра");
+// } else if (daysUntilDeadline === 1){
+//     console.log("Завтра");
+// } else {
+//     console.log("Сьогодні");
+// // }
+
+// switch(daysUntilDeadline) {
+//     case 3:
+//         console.log("Дата у майбутньому");
+//         break;
+//     case 2:
+//         console.log("Післязавтра");
+//         break;
+//     case 1:
+//         console.log("Завтра");
+//         break;
+//      default:
+//         console.log("Сьогодні");
+//         break;
+// }
+
+// 11. Цикл for
+// Напиши цикл for, який виводить у консоль браузера числа за зростанням від min до max, але тільки якщо число кратне 5
+
+// const max = 100;
+// const min = 20; 
+
+// for (let i = min; i >= min && i <= max; i+=1) {
+//     if (!(i%5)) {
+//         console.log(i);
+//     }
+// }
+
