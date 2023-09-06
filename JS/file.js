@@ -269,4 +269,23 @@
 // 7. Сортування масиву із циклом
 // Напиши скрипт сортування масиву рядків в алфавітному порядку за першою літерою елемента
 
-const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby'];
+// const langs = ['cpython', 'bjavascript', 'ac++', 'haskel', 'php', 'ruby'];
+// for (let i = 0; i < langs.length; i +=1) {
+// //  дивимося в юнікод
+//         if (langs[0] > langs[i]) {
+//             const result = langs.splice(i,1)[0];
+//                       langs.unshift(result)
+//         }
+//     }
+//     console.log(langs)
+
+// 8. Напиши скрипт пошуку найменшого числа у масиві. Код повинен працювати для будь-якого масиву чисел. Використовуй цикл 
+
+// const numbers = [2, 17, 94, 1, 23, 37];
+// let min = numbers[0]; // undefined
+// for (const item of numbers) {
+// if (item < min) {
+//     min = item;
+// }
+// }
+// console.log(min);// 1
