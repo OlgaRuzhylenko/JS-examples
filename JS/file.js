@@ -263,4 +263,10 @@
 // 6. Масиви та рядки
 // Напиши скрипт, який розгортає рядок (зворотний порядок букв) і виводить його в консоль
 
-const string = "Welcome to the future"
+// const string = "Welcome to the future"
+// console.log(string.split('').reverse().join(''));
+
+// 7. Сортування масиву із циклом
+// Напиши скрипт сортування масиву рядків в алфавітному порядку за першою літерою елемента
+
+const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby'];
