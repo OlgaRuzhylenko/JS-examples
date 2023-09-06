@@ -209,3 +209,48 @@
 // console.log(genres.unshift("Country", "Reggae"));
 // console.log(genres);
 
+// 2. Масиви та рядки
+// Напиши скрипт для обчислення площі прямокутника зі сторонами, значення яких збрігається у змінній values у вигляді рядка. Значення гарантовано розділені пробілом. 
+// const values = "8 11";
+// const arr = values.split(' ');
+// const first = Number(arr[0]);
+// const second = Number(arr[arr.length-1]);
+// console.log(arr);
+// const result = first * second;
+// console.log(result);
+
+// 3. перебір масиву
+// Напиши скрипт для перебору масиву fruits циклом for. Для кожного елементу масиву виведи в консоль рядок у форматі номер_елемента: значення_елемента
+// Нумерація елементів повинна починатся з 0.
+
+// const fruits = ['apple', 'grape', 'peach', 'banana', 'lemon'];
+// for (let i = 0; i < fruits.length; i += 1) {
+//     console.log(`${i+1}: ${fruits[i]}`);
+// }
+// for (let i = 0,  n = 1; i < fruits.length; i += 1, n +=1) {
+//     console.log(`${n}: ${fruits[i]}`);
+// }
+
+// 4. Масиви та цикли
+// напиши скрипт, який виводить у консоль ім'я та телефонний номер користувача. У змінних names та phones зберігаються рядки імен та телефонних номерів, розділені комами. Порядковий номер імен та телефонів у рядках вказують на відповідність. Кількість імен та телефонів гарантовано однакова
+// let names = "Anna, Olga, Inna, Maria";
+// let phones = '80971112233, 80672225599, 0634441100, 0749995511';
+
+// names = names.split(',');
+// phones = phones.split(',');
+
+// for (let i = 0; i < names.length; i +=1) {
+//        console.log(`${names[i]} - ${phones[i]}`);
+// }
+
+// 5. Масиви та рядки
+// Напиши скрипт, який виводить у консоль усі слова рядка, крім першого і останнього. Результуючий рядок не повинен починатися або закінчуватися символом пробілу. Скрипт повинен працювати для будь-якого рядка
+
+const string = 'Welcome to the future'
+const stringArr = string.split('');
+console.log(stringArr);
+const result = stringArr.pop();
+console.log(stringArr);
+const result2 = stringArr.shift();
+console.log(stringArr);
+console.log(stringArr.join(''))
