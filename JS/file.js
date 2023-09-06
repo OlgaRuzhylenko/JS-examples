@@ -122,3 +122,11 @@
 //     }
 // }
 
+// МАСИВИ
+
+const array = [1, "Hello", null, true, [1, 2, 3]];
+for (let i = 0; i < array.length; i += 1) {
+console.log(i);
+console.log([i]);
+console.log(array.push([i]));
+}
