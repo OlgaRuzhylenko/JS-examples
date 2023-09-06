@@ -124,9 +124,88 @@
 
 // МАСИВИ
 
-const array = [1, "Hello", null, true, [1, 2, 3]];
-for (let i = 0; i < array.length; i += 1) {
-console.log(i);
-console.log([i]);
-console.log(array.push([i]));
-}
+// const array = [1, "Hello", null, true, [1, 2, 3]];
+// for (let i = 0; i < array.length; i += 1) {
+// // console.log(i);
+// // console.log([i]);
+// console.log(array[i]);
+// if (Array.isArray(array[i])) {
+//     for (let j = 0; j <array[i].length; j +=1) {
+//         console.log(array[i][j])
+//     }
+// }
+// }
+
+// for (const item of array) {
+//     console.log(item);
+// if (Array.isArray) {
+//     for (const item2 of array) {
+//         console.log(item2)
+//     }
+// // }
+// for (let i = 0; i < array.length; i += 1) {
+//     if (typeof array[i] === 'string') {
+//         array[i] = false;
+//     }
+// }
+// console.log(array);
+// ми змінили вихідний масив. for змінює, for Of, копіює
+// якщо нам потрібен індекс, то це завджи цикл for
+
+//  SPLIT ТА JOIN
+// const str = 'Hello world';
+// const arr = str.split(' ');
+// const result = arr.reverse().join(' ');
+// arr.reverse()
+// console.log(arr);
+// console.log(result);
+// запис в один рядок
+// const result = str.split(' ').reverse().join(' ');
+// console.log(result);
+// for (const item of arr) {
+//     console.log(item);
+// }
+// for (let i = 0; i < arr.length; i-= 1) {
+//     console.log(arr[i]);
+// }
+
+// const arr = [1, 2, "hello", [2,5]];
+
+// const result = arr.slice(1, 3);
+// console.log(result);
+// console.log(arr);
+
+// const arr = [1, 2, "hello", [2,5]];
+//видаляємо (індекс ел який видалямо, к-ть скільки видалямо)
+// arr.splice(2, 1);
+// console.log(arr);
+//заміна (ігдекс ел який замінюємо, к-ть скільки замінюємо, на що замінюємо)
+// arr.splice(2, 1, 'bye');
+// console.log(arr);
+//додаємо (індекс, на який поставити новий елемент, 0, що додаємо)
+// arr.splice(3, 0, "string");
+// console.log(arr);
+// const idx = arr.indexOf("hello");
+// console.log(idx);
+// const result = arr.splice(idx, 1, "bye");
+// console.log(arr);
+// console.log(result);
+
+// 1. Базові операції з масивом
+// Створіть масив "genres" з елементами "Jazz" та "Blues"
+// Додайте "rock-and-roll" до кінця
+// Виведіть у консоль перший елемент масиву
+// Виведіть у консоль останній елемент масиву. Код повинен працювати для масиву довільної довжини.
+// видаліть перший елемент та виведіть його в консоль
+// вставте "Country" та "Reggae" на початок масиву. 
+// const genres = ["Jazz", "Blues"];
+// console.log(genres);
+// console.log(genres.push("rock-and-roll"));
+// console.log(genres);
+// console.log(genres[0]);
+// console.log(genres[genres.length-1]);
+// console.log(genres.shift());
+// console.log(genres);
+// console.log(genres.unshift("Country", "Reggae"));
+// console.log(genres);
+
