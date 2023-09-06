@@ -246,11 +246,21 @@
 // 5. Масиви та рядки
 // Напиши скрипт, який виводить у консоль усі слова рядка, крім першого і останнього. Результуючий рядок не повинен починатися або закінчуватися символом пробілу. Скрипт повинен працювати для будь-якого рядка
 
-const string = 'Welcome to the future'
-const stringArr = string.split('');
-console.log(stringArr);
-const result = stringArr.pop();
-console.log(stringArr);
-const result2 = stringArr.shift();
-console.log(stringArr);
-console.log(stringArr.join(''))
+// const string = 'Welcome to the future'
+// const stringArr = string.split(' ');
+// console.log(stringArr);
+// const result = stringArr.pop();
+// console.log(stringArr);
+// const result2 = stringArr.shift();
+// console.log(stringArr);
+// console.log(stringArr.join(' '))
+// console.log(typeof(stringArr));
+// Один рядок
+// const result = string.split(' ').slice(1, -1).join(' ');
+
+// console.log(result)
+
+// 6. Масиви та рядки
+// Напиши скрипт, який розгортає рядок (зворотний порядок букв) і виводить його в консоль
+
+const string = "Welcome to the future"
