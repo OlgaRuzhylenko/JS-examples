@@ -482,9 +482,131 @@
 // logItems(['***', '---', "///"]);
 
 // 5. Логування контактів
-// Напиши функцію printContactsInfo(names, phones), яка виводить у консоль ім'я та тел номер користувача. У параметри names та phones будуть передані рядки імен та тел номерів ,розділені комами. Порядковий номер імен та телефонів у рядках вказують на відповідність. Кількість імен та телефонів гарантовано однакова
+// Напиши функцію printContactsInfo(names, phones), яка виводить у консоль ім'я та тел номер користувача. У параметри names та phones будуть передані рядки імен та тел номерів, розділені комами. Порядковий номер імен та телефонів у рядках вказують на відповідність. Кількість імен та телефонів гарантовано однакова
 
-function printContactsInfo(names, phones) {
+// function printContactsInfo(names, phones) {
+// names = names.split(',');//зробили масив 
+// phones = phones.split(',');
+// console.log(names);
+// console.log(phones);
 
-}
-printContactsInfo ('Olga,Anna,Maria', '097555,063333,073999')
+// for (let i = 0; i < names.length, i < phones.length; i +=1) {
+//     console.log(`${names[i]} - ${phones[i]}`)
+// }
+
+// }
+// printContactsInfo ('Olga,Anna,Maria', 
+// '097555,063333,073999')
+
+// 6. Пошук найбільшого елемента
+// Напиши функцію findLargestNumber(numbers) яка шукає найбільше число в списку чисел (РІЗНА КІЛЬКІСТЬ)
+
+// function findLargestNumber() {
+// // const arr = Array.from(arguments)
+// const arr = [...arguments];
+// let max = arr[0];
+// // console.log(max);
+
+// for (const num of arr) {
+//     if (num > max) { 
+//         max = num;
+//     }
+// }
+
+// return max;
+// }
+
+// console.log(findLargestNumber(2, 17, 94, 1, 23, 37));
+// console.log(findLargestNumber(49, 4, 7, 83, 12));
+
+// тепер в одному із аргументів масив
+// function findLargestNumber() {
+
+// let max;
+// for (const num of arguments) {
+//     if (typeof num === "number") {
+//         max = num;
+//         break
+//     }
+// }
+//  for (const num of arguments) {
+//     if (typeof num === "number") {
+//         if (num > max) {
+//             max = num
+//         } 
+//     }else {
+//             max = findLargestNumber(...num)
+//         }
+//     }
+//     return max;
+//  }
+
+// console.log(findLargestNumber([1, 143, 5, 7], 6, 7, 8, 88, 123));
+
+// 7. Середнє значення
+// Напишіть функцію calAverage(), яка приймає довільну кількість аргументів і повертає середнє значення. Усі аргументи будуть лише числами
+
+// function calAverage() {
+//     // console.log(arguments)
+// let total = 0
+
+// for (const num of arguments) {
+//     total += num
+// }
+// return total / arguments.length
+// }
+
+// console.log(calAverage(1, 2, 3, 4)); // 2.5
+// console.log(calAverage(14, 8, 2)); //8
+// console.log(calAverage(27, 43, 2, 8, 36)); // 23.2
+
+// 8. Форматування часу
+// Напиши функцію formatTime(minutes) яка переведе значення minutes (кількість хвилин) у рядок у форматі годин та хвилин HH:MM
+
+// function formatTime(minutes) {
+// const hours = Math.floor(minutes / 60); // округлили годиин до меншого
+// minutes = minutes % 60;
+// return `${hours.toString().padStart(2,"0")} : ${minutes.toString().padStart(2,"0")}`
+// // console.log(hours);
+// // console.log(minutes)
+// }
+
+// console.log(formatTime(70)); //"01:10"
+// console.log(formatTime(450)); //"07:30"
+// console.log(formatTime(1441)); //"24:01"
+
+// 9. Колекція курсів(includes, indefOf, push і т.д.)
+// Напишіть функції для роботи з колекцією навчальних курсів courses:
+
+// addCourse(name) - додає курс до кінця колекції
+// removeCourse(name) - видаляє курс із колекції
+// updateCourse(oldName, newName) - змінює ім'я на нове
+const courses = ['HTML', 'CSS', "JS", 'React', 'PostgreSQL'];
+// ==========================================
+// function addCourse(course) {
+//     if (courses.includes(course)) {
+//     return `ви вже маєте такий курс`
+//     }
+//     courses.push(course)
+// }
+
+
+// addCourse('Express');
+// console.log(courses);
+// console.log(addCourse('CSS'))
+// ============================================
+// ============================================
+// function removeCourse(course) {
+//     if (courses.includes(course)) {
+//        const idx = courses.indexOf(course)
+//         courses.splice(idx, 1)
+        
+//         return
+//     }
+//     return `курс із таким ім'ям не знайдено`
+// }
+
+
+// removeCourse('React');
+// console.log(courses);
+// console.log(removeCourse('Vue'));
