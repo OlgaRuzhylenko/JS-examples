@@ -376,7 +376,24 @@
 // Вага та висота будуть спеціально передані як рядки. Не цілі числа можуть бути задані у вигляді 24,7 або 24.7, тобто як роздільник дробової частини може бути кома
 
 // Індекс маси тіла необхідно округлити до однієї цифри після коми
+// function calcBMI(weight, height) {
+//     weight = Number(weight.replace(',', '.'));
+//     height = Number(height.replace(',', '.'));
+//     // console.log(weight);
+//     // console.log(height);
 
-const bmi = calcBMI("88,3", "1.75");
+//     // return weight / Math.pow(height, 2);
+//    return Number((weight / height ** 2).toFixed(1));
+// }
 
 
+// const bmi = calcBMI("88,3", "1.75");
+
+// console.log(bmi);
+
+// (1) створюємо функцію
+// (2) за доп метода replace замінюємо , на .
+// (3) приводимо до типу даних number, тому що далі математична дія
+// (4) приводимо height до квадрата за доп Math.pow(height, 2), або  height ** 2;
+// (5) залишаємо 1 знак після коми за доп. toFixed(1)
+// (6) приводимо до number, бо після toFixed отримали рядок
