@@ -397,3 +397,94 @@
 // (4) приводимо height до квадрата за доп Math.pow(height, 2), або  height ** 2;
 // (5) залишаємо 1 знак після коми за доп. toFixed(1)
 // (6) приводимо до number, бо після toFixed отримали рядок
+
+// 2. Найменше з чисел
+// Напиши функцію min (a, b), яка повертає найменше з чисел a та b 
+// //якщо не відомо скільки аргументів
+// function min (a, b)
+// {
+//     const arr = [...arguments]
+//         console.log(arr);
+
+//         let minNumber = arr[0];
+//      for (const number of arr) {
+//      console.log(number);
+      
+//             if (number < minNumber) {
+//                 minNumber = number
+//         }
+//     }
+//     return(minNumber);
+// }
+
+// console.log(min(2, 5));
+// console.log(min(3, -1));
+// console.log(min(1, 1));
+
+// коротший варіант
+// function min (a, b) {
+//     if (a > b) {
+//         return b;
+//     }
+//     return a;
+// }
+
+// console.log(min(2, 5));
+// console.log(min(3, -1));
+// console.log(min(1, 1));
+
+// тернарний оператор
+// function min (a, b) {
+//     return a > b ? b : a;
+// }
+
+// console.log(min(2, 5));
+// console.log(min(3, -1));
+// console.log(min(1, 1));
+
+// 3. Площа прямокутника
+// Напиши функцію getRectArea(dimensions) для обчислення площі прямокутника зі сторонами, значення яких будуть передані до параметра dimensions у вигляді рядка. Значення гарантовано розділені пробілом
+
+// function getRectArea(dimensions) {
+//     dimensions = dimensions.split(' ');
+//     // const first = Number(dimensions[0]);
+//     // const second = Number(dimensions[1]);
+
+//     // return first * second;
+//     // console.log(second);
+// // якщо скорочено
+// return Number(dimensions[0] * dimensions[1]);
+
+// }
+
+// console.log(getRectArea("8 11"));
+// console.log(getRectArea("46 11"));
+// console.log(getRectArea("8 112"));
+
+// 4. Логування елементів
+// Напиши функцію logItems(items), яка отримує масив та використовує цикт for, який для кожного леемента масиву буде виводити в консоль повідомлення у форматі <номер елемена> - <значення елемента>. Нумерація елементів повинна починатися з 1
+
+// Наприклад, для першого елемента масиву ['Mango', 'Poly', "Ajax"] з індексом 0 буде виведено 1 - Mango, а для індексу 2 виведе 3 - Ajax
+
+// function logItems(items) {
+// //     for (let i = 0, num = 1; i < items.length; i +=1, num +=1) {
+// //         console.log(`${num} - ${items[i]}`)
+     
+// //     }
+// // без num
+// // for (let i = 0; i < items.length; i +=1) {
+// //       console.log(`${i + 1} - ${items[i]}`)
+         
+// //     }
+// // }
+
+// logItems(['Mango', 'Poly', "Ajax"]);
+// logItems(['***', '---', "///"]);
+
+// 5. Логування контактів
+// Напиши функцію printContactsInfo(names, phones), яка виводить у консоль ім'я та тел номер користувача. У параметри names та phones будуть передані рядки імен та тел номерів ,розділені комами. Порядковий номер імен та телефонів у рядках вказують на відповідність. Кількість імен та телефонів гарантовано однакова
+
+function printContactsInfo(names, phones) {
+
+}
+printContactsInfo ('Olga,Anna,Maria', '097555,063333,073999')
