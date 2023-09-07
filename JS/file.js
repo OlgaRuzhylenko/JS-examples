@@ -289,3 +289,94 @@
 // }
 // }
 // console.log(min);// 1
+
+// ================ФУНКЦІЇ==================
+// function add(val, val1, val2, val3) {
+// console.log(val + val1 + val2 + val3);
+// }
+// add (1, 2, 3, 4);
+// add (1, 2, 3, 4, 5);
+// add (1, 2, 3, 4, 5, 6);
+
+// function add(val, val1, val2, val3, val4, val5) {
+//     console.log(val + val1 + val2 + val3 + val4 + val5);
+//     }
+//     add (1, 2, 3, 4, 5, 6);
+//     add (1, 2, 3, 4);
+//     add (1, 2, 3, 4, 5);
+    
+    // function add() {
+    //     let sum = 0;
+    //     // const arr = Array.from(arguments);
+    //     const arr = [...arguments]
+    //     console.log(arr);
+    //     console.log(arguments);
+    //     // for (let i = 0; i < arguments.length; i +=1) {
+    //     //     sum += arguments[i];
+    //     // }
+    //     for (const item of arguments) {
+    //         sum += item;
+    //     }
+    // console.log(sum);
+    //     }
+    //     add (1, 2, 3, 4, 5, 6);
+    //     add (1, 2, 3, 4);
+    //     add (1, 2, 3, 4, 5);
+    
+    
+        // ---------RETURN-------
+    //     function add() {
+    //         let sum = 0;
+    //         const arr = [...arguments];
+    //         console.log(arr);
+    //         console.log(arguments);
+    //         for (const item of arguments) {
+    //             sum += item      
+    //           }
+    //     //  !!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //      return sum;
+    //     //  !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //     }
+    //    const responce = add(1, 2, 30);
+    //    console.log(responce);
+
+    // function lastNumber () {
+    //     let sum = 0;
+    //     for (const arg of arguments) {
+    //         sum += arg; 
+    //         if (sum > 10) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+    // const responce = lastNumber (1, 2, 3);
+    // console.log(responce);
+    // console.log(lastNumber (1, 2, 3, 4));
+    // console.log(lastNumber (1, 2, 3, 4, 5));
+
+//     function createString (name, year) {
+//       const result = add(year);
+//         return `${name} years ${result}`
+//     }
+//     createString ("mango", [1, 2, 3]);
+//     console.log(createString ("mango", [1, 2, 3]))
+   
+//    function add (arr) {
+//     let sum = 0;
+//     for (const num of arr) {
+//         sum += num;
+//     }
+//     return sum;
+//    }
+
+// 1. Індекс маси тіла
+// Напиши функцію calcBMI(weight, height) яка розраховує та повертає індекс маси тіла людини. Для цього необхідно розділити вагу в кг на квадрат висоти людини в метрах.
+
+// Вага та висота будуть спеціально передані як рядки. Не цілі числа можуть бути задані у вигляді 24,7 або 24.7, тобто як роздільник дробової частини може бути кома
+
+// Індекс маси тіла необхідно округлити до однієї цифри після коми
+
+const bmi = calcBMI("88,3", "1.75");
+
+
