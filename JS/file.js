@@ -610,3 +610,74 @@ const courses = ['HTML', 'CSS', "JS", 'React', 'PostgreSQL'];
 // removeCourse('React');
 // console.log(courses);
 // console.log(removeCourse('Vue'));
+
+// // ===========================ОБ'ЄКТИ=================================
+// const user = {
+//     name: 'Artem',
+//     age: 28,
+//     languages: {
+//         html: false,
+//         css: false,
+//         js: true,
+//         "React Native": false
+//     }
+// }
+// console.log(user.name);
+// console.log(user["languages"]["React Native"]);
+
+// for (const key in user) {
+// console.log(user[key]);
+// }
+
+//  const user = {
+//     name: 'Artem',
+//     age: 28,
+//     languages: {
+//         html: false,
+//         css: false,
+//         js: true,
+//         "React Native": false
+//     }
+// }
+// змінюємо щось в об'єкті
+// // user.age = 29;
+// user.age += 1;
+// console.log(user.age);
+
+// user.city = "Kyiv";
+// console.log(user.city);
+
+// видалення ключа
+// delete user.city;
+// console.log(user.city);
+
+// заборона змінювати об'єкт
+//  const user = {
+//     name: 'Artem',
+//     age: 28,
+//     languages: {
+//         html: false,
+//         css: false,
+//         js: true,
+//         "React Native": false
+//     }
+// }
+
+// Object.freeze(user)
+// // далі буде проігноровано
+// user.adfadfsd = "afadsfvadsv";
+// user.age = '100';
+// console.log(user);
+
+ const user = {
+    name: 'Artem',
+    age: 28,
+    languages: {
+        html: false,
+        css: false,
+        js: true,
+        "React Native": false
+    }
+}
+const user2 = Object.create(user);
+console.log(user.age);
