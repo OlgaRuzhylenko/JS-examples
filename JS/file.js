@@ -736,26 +736,26 @@ const courses = ['HTML', 'CSS', "JS", 'React', 'PostgreSQL'];
 
 // this треба для того, щоб можна було дітлися методами. Щоб одна фукнція працювала в різних об'єктах
 
-const user = {
-    name: 'Artem',
-    age: 28,
-    languages: {
-        html: true,
-        css: false,
-        js: true,
-        ReactNative: false
-    },
-    sayHello() {
-        console.log(`My name ${this.name}`);
-     },
-     iKnow() {
-const keys = Object.keys(this.languages);
-const values = Object.values(this.languages);
-const entries = Object.entries(this.languages);
+// const user = {
+//     name: 'Artem',
+//     age: 28,
+//     languages: {
+//         html: true,
+//         css: false,
+//         js: true,
+//         ReactNative: false
+//     },
+//     sayHello() {
+//         console.log(`My name ${this.name}`);
+//      },
+//      iKnow() {
+// const keys = Object.keys(this.languages);
+// const values = Object.values(this.languages);
+// const entries = Object.entries(this.languages);
 
-console.log(keys);
-console.log(values);
-console.log(entries);
+// console.log(keys);
+// console.log(values);
+// console.log(entries);
 
 
 // for(const key of keys) {
@@ -772,12 +772,69 @@ console.log(entries);
 //     //цей рядок з if шукає яка мова =  true
 //     console.log(key)
 // }
-     }
-}
+     
+
 // const user2 = Object.create(user);
 // user2.name = 'Den';
 // // // console.log(user2);
 // user2. sayHello()
 // user. sayHello()
 
-user.iKnow()
+// user.iKnow()
+
+// 1. Основи об'єктів
+// Напиши скрипт, який для об'єкта user послідовно:
+
+// додає поле mood зі значенням "happy"
+// Замінює значення hobby на "skydiving"
+// Замінює значення premium на false
+// виводить вміст об'єкта user у форматі ключ:значення, використовуючи object.keys() та for...of 
+
+// const user = {
+//     name: 'Mango',
+//     age: 20,
+//     hobby: 'html',
+//     premium: true,
+// };
+
+// user.skills = {
+//     run: true
+// }
+// user.mood = 'happy',
+// user.hobby = 'skydiving'
+// // user["premium"] = false,
+// const key = 'premium';
+// user[key] = false;
+// console.log(user);
+
+// const keys = Object.keys(user);
+// for (const key of keys) {
+//     console.log(`${key} : ${user[key]}`);
+// }
+// for (const key in user) {
+//     console.log(user[key]);
+// }
+
+// 2. метод Object.values()
+// У нас є об'єкт, де зберігаються зп нашої команди. Напишіть код для підсумування всіх зп і збережіть результат у змінній sum. Повинно вийти 390. Якщо об'єкт salaries порожній, то результат має бути 0.
+
+// const salaries = {
+//     John: 100,
+//     Ann: 160,
+//     Pete: 130,
+// }
+
+// let sum = 0;
+// const values = Object.values(salaries);
+// console.log(values);
+// for (const value of values) {
+//     sum += value;
+//     // console.log(values);
+// }
+// console.log( sum);
+
+// for (const key in salaries) {
+//     sum += salaries[key];
+//     // console.log(salaries[key]);
+//    }
+// console.log(sum);
