@@ -838,3 +838,11 @@ const courses = ['HTML', 'CSS', "JS", 'React', 'PostgreSQL'];
 //     // console.log(salaries[key]);
 //    }
 // console.log(sum);
+
+// 3. Масив об'єктів
+// Напишіть функцію calcTotalPrice(stones, stoneName), яка приймає масив об'єктів та рядок з назвою каменю. Функція рахує і повертає загальну вартість каміння з таким ім'ям, ціною та кількістю з об'єкта
+
+const stones = [{
+     
+
+]
