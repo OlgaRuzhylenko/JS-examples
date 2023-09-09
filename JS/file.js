@@ -669,15 +669,115 @@ const courses = ['HTML', 'CSS', "JS", 'React', 'PostgreSQL'];
 // user.age = '100';
 // console.log(user);
 
- const user = {
+//  const user = {
+//     name: 'Artem',
+//     age: 28,
+//     languages: {
+//         html: false,
+//         css: false,
+//         js: true,
+//         "React Native": false
+//     }
+// }
+// const user2 = Object.create(user);
+// user2.age = 33;
+// console.log(user2);
+
+// for (const key in user2) {
+//     // console.log(key);
+    
+//     if(user2.hasOwnProperty(key)) {
+//         console.log("Own",user2[key]);
+//     } else {
+//         console.log("All",user2[key]);
+//     }
+// }
+// чи присутня властивість і чи вона власна:
+// const user = {
+// score : false
+// }
+
+// if(user.hasOwnProperty('score')) {
+//     console.log('yes')
+// } else {
+//     console.log('no')
+// }
+// чи присутня властивість? Не важливо власна чи упадкована
+// const user = {
+//     score : false
+//     }
+// if ('score' in user) {
+//         console.log('yes')
+//     } else {
+//         console.log('no')
+//     }
+
+// =========методи об'єкта============
+//  const user = {
+//     name: 'Artem',
+//     age: 28,
+//     languages: {
+//         html: false,
+//         css: false,
+//         js: true,
+//         "React Native": false
+//     },
+//     sayHello() {
+//         console.log(this);
+//         //це те ж саме що прописати  console.log(user);
+// }
+// }
+
+// const user2 = Object.create(user);
+// user2.age = 100;
+// // console.log(user2);
+// user2. sayHello()
+// user. sayHello()
+
+// this треба для того, щоб можна було дітлися методами. Щоб одна фукнція працювала в різних об'єктах
+
+const user = {
     name: 'Artem',
     age: 28,
     languages: {
-        html: false,
+        html: true,
         css: false,
         js: true,
-        "React Native": false
-    }
+        ReactNative: false
+    },
+    sayHello() {
+        console.log(`My name ${this.name}`);
+     },
+     iKnow() {
+const keys = Object.keys(this.languages);
+const values = Object.values(this.languages);
+const entries = Object.entries(this.languages);
+
+console.log(keys);
+console.log(values);
+console.log(entries);
+
+
+// for(const key of keys) {
+//     if (this.languages[key]) {
+//         console.log(key);
+//     }
+// }
+// Object.keys повертає завжди власні назви
+
+
+        //способом нижче перебирати не зручно
+// for (const key in this.languages) {
+//     if(this.languages[key])
+//     //цей рядок з if шукає яка мова =  true
+//     console.log(key)
+// }
+     }
 }
-const user2 = Object.create(user);
-console.log(user.age);
+// const user2 = Object.create(user);
+// user2.name = 'Den';
+// // // console.log(user2);
+// user2. sayHello()
+// user. sayHello()
+
+user.iKnow()
