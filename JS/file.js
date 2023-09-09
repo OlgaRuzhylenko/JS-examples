@@ -842,7 +842,86 @@ const courses = ['HTML', 'CSS', "JS", 'React', 'PostgreSQL'];
 // 3. Масив об'єктів
 // Напишіть функцію calcTotalPrice(stones, stoneName), яка приймає масив об'єктів та рядок з назвою каменю. Функція рахує і повертає загальну вартість каміння з таким ім'ям, ціною та кількістю з об'єкта
 
-const stones = [{
-     
+// const stones = [{
+//     name: 'Смарагд',
+//     price: 1300,
+//     quantity: 4
+// },
+// {
+//     name: 'Діамант',
+//     price: 2700,
+//     quantity: 3
+// },
+// {
+//     name: 'Сапфір',
+//     price: 400,
+//     quantity: 7
+// },
+// {
+//     name: 'Щебінь',
+//     price: 200,
+//     quantity: 2
+// },
+// ]
+// function calcTotalPrice(stones, stoneName) {
+//     let result = 0;
+//     for (const stone of stones) {
+//         // console.log(stone)
+//         if (stone.name === stoneName) {
+//             result = stone.price * stone.quantity;
+//             break;
+//         }
+//     }
+//     return result;
+// }
+// function calcTotalPrice(stones, stoneName) {
 
-]
+//     for (const stone of stones) {
+//         // console.log(stone)
+//         if (stone.name === stoneName) {
+//            return stone.price * stone.quantity;
+//            }
+//         console.log(stone.name)
+//     }
+//     return 'Empty'
+// }
+
+// console.log(calcTotalPrice(stones, 'Сапфір'));
+
+// 4. Комплексні завдання
+// Напиши скрипт управління особистим кабінетом інтернет банку. Є об'єкт account в якому необхідно реалізувати методи для роботи з балансом та інсторією транзакцій
+
+// Типів транзакцій всього два
+// можна покласти чи зняти гроші з рахунку
+
+const Transaction = {
+    DEPOSIT: 'deposit',
+    WITHDRAW: 'withdraw'
+}
+
+// Кожна транзакція це об'єкт із властивостями: id, type та amount
+
+const account = {
+    //поточний баланс рахунку
+    balance: 0,
+
+    //історія транзакцій
+transactions: [],
+
+//метод створює та повертає об'єкт транзакції
+// Приймає суму та тип транзакції
+createTransaction(amount, type) {
+    return {
+        id: Date.now()
+    }
+}
+    //метод що відповідає за додавання суми до балансу
+    //приймає суму транзакції
+    //Викликає createTransaction для створення об'єкта транзакції
+    //після чого додає його до історії транзакцій
+
+   //Якщо amount більше ніж поточний баланс, виводь повідомлення про те, що зняття такої суми не можливе, недостатньо коштів
+
+   withdraw(amount) {}
+
+}
