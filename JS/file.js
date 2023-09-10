@@ -1043,14 +1043,27 @@
 // apartment.location = {country: 'Jamaica', city: 'Kingston'}
 // console.log(apartment.location)
 
-const apartment = {
-  descr: "Spacious apartment in the city center",
-  rating: 4,
-  price: 2153,
-};
-const keys = [apartment.key];
-const values = apartment[apartment.key];
-// Change code below this line
-for (const key in apartment) {
-  console.log(key)
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const keys = [];
+// const values = [];
+// // Change code below this line
+// for (const key in apartment) {
+// keys.push(key)
+//   values.push(apartment[key])
+// }
+
+function countProps(object) {
+  let propCount = 0;
+  // Change code below this line
+for (const key in object) {
+  propCount += key
 }
+  // Change code above this line
+  return propCount;
+}
+
+console.log(countProps({ name: "Mango", age: 2 }))
