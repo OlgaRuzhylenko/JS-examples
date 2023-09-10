@@ -581,7 +581,7 @@
 // addCourse(name) - додає курс до кінця колекції
 // removeCourse(name) - видаляє курс із колекції
 // updateCourse(oldName, newName) - змінює ім'я на нове
-const courses = ['HTML', 'CSS', "JS", 'React', 'PostgreSQL'];
+// const courses = ['HTML', 'CSS', "JS", 'React', 'PostgreSQL'];
 // ==========================================
 // function addCourse(course) {
 //     if (courses.includes(course)) {
@@ -987,3 +987,37 @@ const courses = ['HTML', 'CSS', "JS", 'React', 'PostgreSQL'];
 // console.log(account.getTransactionDetails(16));
 // console.log(account.createTransaction(1000, 'deposit'));
 
+const apartment = {
+    imgUrl: "https://via.placeholder.com/640x480",
+    descr: "Spacious apartment in the city center",
+    rating: 4,
+    price: 2153,
+    tags: ["premium", "promoted", "top"],
+    owner: {
+      name: "Henry",
+      phone: "982-126-1588",
+      email: "henry.carter@aptmail.com",
+    },
+  };
+  
+  // Change code below this line
+  const ownerName = apartment.owner.name;
+  const ownerPhone = apartment.owner.phone;
+  const ownerEmail = apartment.owner.email;
+//   console.log(ownerEmail);
+  const numberOfTags = apartment.tags.length;
+//   console.log(numberOfTags);
+  const firstTag = apartment.tags[0];
+//   console.log(firstTag);
+  const lastTag = apartment.tags[apartment.tags.length-1];
+//   console.log(lastTag);
+  // Change code above this line
+  // console.log(genres[genres.length-1]);
+
+  apartment.price = 500,
+  console.log(apartment.price);
+//   apartment.rating = 4.7,
+//   apartment.owner.name = "Henry Sibola",
+//   console.log(apartment.owner.name);
+//   apartment.tags = apartment.tags[apartment.tags.push("trusted")],
+//   console.log(apartment.tags);
