@@ -985,39 +985,72 @@
 // console.log(account.withdraw(123));
 // console.log(account.getBalance());
 // console.log(account.getTransactionDetails(16));
-// console.log(account.createTransaction(1000, 'deposit'));
+// // console.log(account.createTransaction(1000, 'deposit'));
 
-const apartment = {
-    imgUrl: "https://via.placeholder.com/640x480",
-    descr: "Spacious apartment in the city center",
-    rating: 4,
-    price: 2153,
-    tags: ["premium", "promoted", "top"],
-    owner: {
-      name: "Henry",
-      phone: "982-126-1588",
-      email: "henry.carter@aptmail.com",
-    },
-  };
+// const apartment = {
+//     imgUrl: "https://via.placeholder.com/640x480",
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+//     tags: ["premium", "promoted", "top"],
+//     owner: {
+//       name: "Henry",
+//       phone: "982-126-1588",
+//       email: "henry.carter@aptmail.com",
+//     },
+//   };
   
   // Change code below this line
-  const ownerName = apartment.owner.name;
-  const ownerPhone = apartment.owner.phone;
-  const ownerEmail = apartment.owner.email;
+  // const ownerName = apartment.owner.name;
+  // const ownerPhone = apartment.owner.phone;
+  // const ownerEmail = apartment.owner.email;
 //   console.log(ownerEmail);
-  const numberOfTags = apartment.tags.length;
+  // const numberOfTags = apartment.tags.length;
 //   console.log(numberOfTags);
-  const firstTag = apartment.tags[0];
+  // const firstTag = apartment.tags[0];
 //   console.log(firstTag);
-  const lastTag = apartment.tags[apartment.tags.length-1];
+  // const lastTag = apartment.tags[apartment.tags.length-1];
 //   console.log(lastTag);
   // Change code above this line
   // console.log(genres[genres.length-1]);
 
-  apartment.price = 500,
-  console.log(apartment.price);
-//   apartment.rating = 4.7,
-//   apartment.owner.name = "Henry Sibola",
-//   console.log(apartment.owner.name);
-//   apartment.tags = apartment.tags[apartment.tags.push("trusted")],
-//   console.log(apartment.tags);
+  
+  // apartment.price = 5000,
+  // // console.log(apartment.price);
+  // apartment.rating = 4.7,
+  // //  console.log(apartment.rating);
+  // apartment.owner.name = "Henry Sibola",
+  // // console.log(apartment.owner.name);
+  // apartment.tags = apartment.tags.push("trusted"),
+  // console.log(apartment.tags);
+
+//  const apartment = {
+//   imgUrl: "https://via.placeholder.com/640x480",
+//   descr: "Spacious apartment in the city center",
+//   rating: 4.7,
+//   price: 5000,
+//   tags: ["premium", "promoted", "top", "trusted"],
+//   owner: {
+//     name: "Henry Sibola",
+//     phone: "982-126-1588",
+//     email: "henry.carter@aptmail.com",
+//   },
+// };
+
+// // Change code below this line
+// apartment.area = 60;
+// apartment.rooms = 3;
+// apartment.location = {country: 'Jamaica', city: 'Kingston'}
+// console.log(apartment.location)
+
+const apartment = {
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+};
+const keys = [apartment.key];
+const values = apartment[apartment.key];
+// Change code below this line
+for (const key in apartment) {
+  console.log(key)
+}
