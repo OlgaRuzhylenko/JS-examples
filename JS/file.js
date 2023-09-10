@@ -894,34 +894,96 @@ const courses = ['HTML', 'CSS', "JS", 'React', 'PostgreSQL'];
 // Типів транзакцій всього два
 // можна покласти чи зняти гроші з рахунку
 
-const Transaction = {
-    DEPOSIT: 'deposit',
-    WITHDRAW: 'withdraw'
-}
+// const Transaction = {
+//     DEPOSIT: 'deposit',
+//     WITHDRAW: 'withdraw'
+// };
+// Object.freeze(Transaction)
+// // Кожна транзакція це об'єкт із властивостями: id, type та amount
 
-// Кожна транзакція це об'єкт із властивостями: id, type та amount
+// const account = {
+//     //поточний баланс рахунку
+//     balance: 0,
 
-const account = {
-    //поточний баланс рахунку
-    balance: 0,
+//     //історія транзакцій
+// transactions: [],
 
-    //історія транзакцій
-transactions: [],
+// //метод створює та повертає об'єкт транзакції
+// // Приймає суму та тип транзакції
+// createTransaction(amount, type) {
+//     return {
+//         id: Date.now(),
+//         amount,
+//         type
+//     }
 
-//метод створює та повертає об'єкт транзакції
-// Приймає суму та тип транзакції
-createTransaction(amount, type) {
-    return {
-        id: Date.now()
-    }
-}
-    //метод що відповідає за додавання суми до балансу
-    //приймає суму транзакції
-    //Викликає createTransaction для створення об'єкта транзакції
-    //після чого додає його до історії транзакцій
+// },
+// //метод, що відповідає за додавання суми до балансу.
+// // Приймає суму транзакції
+// // викликає createTransaction для створення об'єкта транзакції, після чого додає його до історії транзакцій
+// deposit(amount) {
+//     if (amount <= 0) {
+//         return 'Error'
+//     }
+// const item = this.createTransaction(amount, Transaction.DEPOSIT)
+// this. balance += amount
+// this.transactions.push(item);
+// },
+//     //метод що відповідає за зняття суми з балансу
+//     //приймає суму транзакції
+//     //Викликає createTransaction для створення об'єкта транзакції
+//     //після чого додає його до історії транзакцій
 
-   //Якщо amount більше ніж поточний баланс, виводь повідомлення про те, що зняття такої суми не можливе, недостатньо коштів
+//    //Якщо amount більше ніж поточний баланс, виводь повідомлення про те, що зняття такої суми не можливе, недостатньо коштів
 
-   withdraw(amount) {}
+//    withdraw(amount) {
+//     if (amount > this.balance || amount <= 0) {
+//         return 'недостатньо коштів'
+//     }
+//     // {
+//     //     id: Date.now(),
+//     //     amount,
+//     //     type
+//     // }
+    
+//     const item = this.createTransaction(amount, Transaction.WITHDRAW)
+//    this.transactions.push(item);
+//    this.balance -= amount;
+//    },
 
-}
+//    //меттд повертає поточний баланс
+//    getBalance() {
+//     return this.balance
+//    },
+
+//    //метод шукає та повертає об'єкт транзакції по id
+
+// getTransactionDetails(id) {
+//     for (const transactions of this.transactions) {
+//         if (transactions.id === id) {
+//             return Transaction
+//         }
+//     }
+//     return 'Empty'
+// },
+// //метод повертає кількість коштів певного типу з усієї історії транзакцій
+// getTransactionTotal(type) {
+//     let sum = 0;
+// for (const Transaction of this.transactions) {
+//     if(Transaction.type === type) {
+// sum +=Transaction.amount
+//     }
+// }
+// return sum;
+// },
+// }
+// account.deposit(1);
+// account.deposit(1234);
+// account.deposit(1431);
+// account.withdraw(123);
+// console.log(account.getTransactionTotal(Transaction.WITHDRAW))
+// console.log(account.withdraw(123));
+// console.log(account.getBalance());
+// console.log(account.getTransactionDetails(16));
+// console.log(account.createTransaction(1000, 'deposit'));
+
