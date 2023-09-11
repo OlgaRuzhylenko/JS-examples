@@ -1312,15 +1312,81 @@
  * @param {Object} obj 
  * @returns {Number} BMI
  */
-function calcBMI({weight, height}) {
-      const numericWeight = Number(weight.replace(',', '.'));
-      const numericHeight = Number(height.replace(',', '.'));
-      return Number((numericWeight / numericHeight ** 2).toFixed(1));
-  }
-//   Було
-//  console.log(calcBMI('88,3', '1.75'));
-// стало
-console.log(calcBMI({
-  weight : '88,3',
-  height : '1.75'
-}));
+// function calcBMI({weight, height}) {
+//       const numericWeight = Number(weight.replace(',', '.'));
+//       const numericHeight = Number(height.replace(',', '.'));
+//       return Number((numericWeight / numericHeight ** 2).toFixed(1));
+//   }
+// //   Було
+// //  console.log(calcBMI('88,3', '1.75'));
+// // стало
+// console.log(calcBMI({
+//   weight : '88,3',
+//   height : '1.75'
+// }));
+
+// 2. Деструктуризація
+// перепиши функцію так, щоб вона приймала один об'єкт параметрів замість набору незалежних аргументів
+
+/**
+ * 
+ * @param {Object} obj
+ */
+// function printContactsInfo({names, phones}) {
+// t  const nameList = names.split(',');//зробили масив 
+//   const phoneList = phones.split(',');
+  
+//   for (let i = 0; i < nameList.length, i < phoneList.length; i +=1) {
+//       console.log(`${nameList[i]} - ${phoneList[i]}`)
+//   }
+  
+//   }
+//   printContactsInfo ({
+//     names : 'Olga,Anna,Maria', 
+//   phones : '097555,063333,073999'})
+  
+// 3. Глибока деструктуризація
+// перепиши функцію так, щоб вона приймала один об'єкт параметрів замість набору незалежних аргументів
+
+// function getBotReport({companyName, repairBots, defenceBots}) {
+//   return `${companyName} has ${repairBots + defenceBots} bots in stock`;
+// }
+// // Було
+// console.log(getBotReport({
+//   companyName : 'Cyberdyne Systems', 
+//   repairBots : 150, 
+//   defenceBots : 50}));
+
+// 4. деструктуризація
+// перепиши функцію так, щоб вона приймала один об'єкт параметрів із властивостями companyName та stock та виводила репорт про кількість товарів на складі буль-якої компанії
+function getStockReport({
+  companyName, 
+  stock : {
+    repairBots,
+    defenceBots
+   }
+}) {
+  let total = repairBots + defenceBots;
+  // for (const value of Object.values(stock)) {
+  //   total += value;
+  // }
+  return `${companyName} has ${total} items in stock`;
+}
+
+console.log(
+  getStockReport({
+    companyName : 'Cyberdyne Systems', 
+    stosk : {
+      repairBots : 150,
+      defenceBots : 50,
+    },
+  }),
+); 
+// console.log (
+//   getStockReport('Belacci', {
+//     shoes : 20,
+//     skirts : 10,
+//     hats : 5,
+//   },
+//   ),
+// )
