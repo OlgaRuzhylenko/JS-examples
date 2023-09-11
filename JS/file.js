@@ -1232,25 +1232,58 @@
 // const {html} = Skillhtml
 // console.log(html);
 
-const user = [{
-  name : 'User1',
-  language : 'html',
-  car: {
-    audi : 'A6'
-  }
-}, {
-  name : 'User2',
-  language : 'css',
-  car: {
-    audi : 'A8'
-  }
-}, {
-  name : 'User3',
-  language : 'js',
-  car: {
-    audi : 'A7'
-  }
-}]
-for (const {name, car : {audi : car}} of user) {
-  console.log(name, car);
-}
+// const user = [{
+//   name : 'User1',
+//   language : 'html',
+//   cars: {
+//     audi : 'A6',
+//     bmw: 'X5'
+//   }
+// }, {
+//   name : 'User2',
+//   language : 'css',
+//   cars: {
+//     audi : 'A8',
+//     bmw: 'X6'
+//   }
+// }, {
+//   name : 'User3',
+//   language : 'js',
+//   cars: {
+//     audi : 'A7'
+//   }
+// }]
+// for (const {name, cars : {audi : car}} of user) {
+//   console.log(name, car);
+// }
+//значення по дефолту
+// for (const {name, cars : {audi, bmw = 'none'}} of user) {
+//     console.log(name, bmw);
+//   }
+
+// function foo({name, cars : { bmw = 'none'} = {}}) {
+//  console.log(name, bmw);
+// }
+// foo(
+//   {
+//     name : 'User1',
+//     language : 'html',
+//     cars: {
+//         audi : 'A6',
+//         bmw: 'X5'
+//     }
+//   }
+// // )
+// foo(
+//   {
+//     name : 'User1',
+//     language : 'html',
+//       }
+// )
+
+// ==============spread rest==========
+
+const arr = [12, 22, 3, 14, 45, 16, 57];
+//spread
+const min = Math.min(...arr)
+console.log(min);
