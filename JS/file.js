@@ -1283,7 +1283,44 @@
 
 // ==============spread rest==========
 
-const arr = [12, 22, 3, 14, 45, 16, 57];
-//spread
-const min = Math.min(...arr)
-console.log(min);
+// const arr1 = [12, 22, 3, 14, 45, 16, 57];
+// // //spread
+// // // const min = Math.min(...arr1)
+// // // console.log(min);
+// // const arr2 = [...arr1];
+// // console.log(arr1 === arr2);
+// ///////rest
+// const [first, ...props] = arr1;
+// console.log('props', props);
+// console.log(first);
+// for (let i = 0; i < props.length; i += 1) {
+//   props[i] *= first
+// }
+// console.log(props);
+
+// // тут оператор rest
+// function foo(first, second, ...args) {
+// console.log(args);
+// }
+// foo(1, 2, 3, 4, 5, 6)
+
+// 1. Деструктуризація
+// перепиши функцію так, щоб вона приймала один об'єкт параметрів замість набору незалежних аргументів
+
+/**
+ * Розраховує індекс маси тіла людини
+ * @param {Object} obj 
+ * @returns {Number} BMI
+ */
+function calcBMI({weight, height}) {
+      const numericWeight = Number(weight.replace(',', '.'));
+      const numericHeight = Number(height.replace(',', '.'));
+      return Number((numericWeight / numericHeight ** 2).toFixed(1));
+  }
+//   Було
+//  console.log(calcBMI('88,3', '1.75'));
+// стало
+console.log(calcBMI({
+  weight : '88,3',
+  height : '1.75'
+}));
