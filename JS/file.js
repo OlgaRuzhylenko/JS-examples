@@ -1060,10 +1060,13 @@ function countProps(object) {
   let propCount = 0;
   // Change code below this line
 for (const key in object) {
-  propCount += key
+  if (object.hasOwnProperty(key)) {
+    propCount = Object.keys(object).length
+  }
 }
   // Change code above this line
   return propCount;
 }
+
 
 console.log(countProps({ name: "Mango", age: 2 }))
