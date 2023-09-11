@@ -1127,12 +1127,12 @@
 // }
 // console.log(hexColors)
 
-const products = [
-  { name: "Radar", price: 1300, quantity: 4 },
-  { name: "Scanner", price: 2700, quantity: 3 },
-  { name: "Droid", price: 400, quantity: 7 },
-  { name: "Grip", price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
 
 // function getProductPrice(productName) {
 //   // Change code below this line
@@ -1164,17 +1164,93 @@ const products = [
 // }
 // console.log(getAllPropValues("name"));
 
-function calculateTotalPrice(productName) {
-  // Change code below this line
-  let value = 0;
+// function calculateTotalPrice(productName) {
+//   // Change code below this line
+//   let value = 0;
 
-  for (const product of products) {
-    if (product.hasOwnProperty(productName)) {
-      console.log(product)
-    }
+//   for (const product of products) {
+//     if (product.name === productName) {
+//       value = product. price * product.quantity;
+//     }
+//   }
+//   return value;
+
+//   // Change code above this line
+// }
+// console.log(calculateTotalPrice("Radar"))
+
+// ===================Деструктуризація масивів==================
+// const arr = [1, 2, 3];
+// const [one, two, three] = arr;
+// console.log(one);
+
+// ===================Деструктуризація об'єктів==================
+// const user = {
+//   name: "Test",
+//   age: 11,
+//   skills: {
+//     html: true,
+//     css: true,
+//     js: false
+//   }
+// }
+// const name = 'value';
+// const {age, name : userName} = user;
+// console.log(age);
+// console.log(name);
+// console.log(userName);
+
+// const user = {
+//   name: "Test",
+//   age: 11,
+//   skills: {
+//     html: true,
+//     css: true,
+//     js: false,
+//     cars : {
+//       audi: 'A6',
+//       bmw: 'x5'
+//     }
+//   },
+//   languages : [{html : true}, {css: false}]
+// };
+// const {name, 
+//       skills : {
+//         js,
+//         html,
+//         css : sass,
+//         cars : {
+//           audi
+//         }
+//       }
+//     } = user;
+//   // console.log (userJS, html);
+//  console.log (sass);
+// const {languages  : [html]} = user
+// console.log (html);
+// const {languages  : [Skillhtml, css]} = user
+// const {html} = Skillhtml
+// console.log(html);
+
+const user = [{
+  name : 'User1',
+  language : 'html',
+  car: {
+    audi : 'A6'
   }
-  // return value;
-
-  // Change code above this line
+}, {
+  name : 'User2',
+  language : 'css',
+  car: {
+    audi : 'A8'
+  }
+}, {
+  name : 'User3',
+  language : 'js',
+  car: {
+    audi : 'A7'
+  }
+}]
+for (const {name, car : {audi : car}} of user) {
+  console.log(name, car);
 }
-console.log(calculateTotalPrice("Radar"))
