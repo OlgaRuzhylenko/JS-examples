@@ -1359,34 +1359,49 @@
 
 // 4. деструктуризація
 // перепиши функцію так, щоб вона приймала один об'єкт параметрів із властивостями companyName та stock та виводила репорт про кількість товарів на складі буль-якої компанії
-function getStockReport({
-  companyName, 
-  stock : {
-    repairBots,
-    defenceBots
-   }
-}) {
-  let total = repairBots + defenceBots;
-  // for (const value of Object.values(stock)) {
-  //   total += value;
-  // }
-  return `${companyName} has ${total} items in stock`;
-}
+// function getStockReport({
+//   companyName, 
+//   stock : {
+//     repairBots,
+//     defenceBots
+//    }
+// }) {
+//   let total = repairBots + defenceBots;
+//   // for (const value of Object.values(stock)) {
+//   //   total += value;
+//   // }
+//   return `${companyName} has ${total} items in stock`;
+// }
 
-console.log(
-  getStockReport({
-    companyName : 'Cyberdyne Systems', 
-    stosk : {
-      repairBots : 150,
-      defenceBots : 50,
-    },
-  }),
-); 
-// console.log (
-//   getStockReport('Belacci', {
-//     shoes : 20,
-//     skirts : 10,
-//     hats : 5,
-//   },
-//   ),
-// )
+// console.log(
+//   getStockReport({
+//     companyName : 'Cyberdyne Systems', 
+//     stosk : {
+//       repairBots : 150,
+//       defenceBots : 50,
+//     },
+//   }),
+// ); 
+
+// function isIncluded(num, ...array) {
+//   console.log(array.includes(num))
+// }
+// isIncluded(1, 2, 3, 4, 5, 6, 8, 5)
+
+// function isIncluded(...array) {
+//   const newArray = array.slice(1);
+//   console.log(newArray)
+//   console.log(newArray.includes(array[0]))
+// }
+// isIncluded(1, 2, 3, 4, 5, 6, 8, 5)
+
+// function isIncluded(...array) {
+//   console.log(array);
+//   const num = array.pop();
+//    console.log(array);
+//   console.log(num);
+//   console.log(array.includes(num));
+// }
+
+// isIncluded(1, 2, 3, 4, 5, 6, 8, 5)
+
