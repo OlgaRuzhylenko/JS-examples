@@ -1405,3 +1405,61 @@
 
 // isIncluded(1, 2, 3, 4, 5, 6, 8, 5)
 
+// Задача
+const car1 = {
+  brand: 'BMW',
+  model: '700',
+  a: 'red',
+  maxSpeed: 240,
+  isNew: true,
+  dimensions: {
+    weight: 2000,
+    height: 150,
+    length: 4.2,
+  },
+};
+const car2 = {
+  brand: 'BMW',
+  model: '700',
+  a: 'red',
+  maxSpeed: 240,
+  isNew: true,
+  dimensions: {
+     
+    height: 150,
+    length: 4.2,
+  },
+};
+// не працює як треба
+// function createMessage(car) {
+//   const message = `
+//   color: $(car.a)
+//   Max speed: ${car.maxSpeed}
+//   Is new: ${car.isNew}
+//   Weight: ${car.weight}
+//   `;
+//   console.log(message);
+// }
+
+//працює
+// function createMessage({
+//   dimensions: {
+//     weight = 'No Info',
+//     height = 'No Info', 
+//     length = 'No Info',
+//   },
+//   a: color =  'No Info',
+//   maxSpeed = 'No Info',
+//   isNew = 'No Info',
+// }) {
+//   const message = `
+//   color: ${color}
+//   Max speed: ${maxSpeed}
+//   Is new: ${isNew}
+//   Weight: ${weight}
+//   `;
+//   console.log(message);
+// }
+
+    
+// createMessage(car2)
