@@ -1406,30 +1406,30 @@
 // isIncluded(1, 2, 3, 4, 5, 6, 8, 5)
 
 // Задача
-const car1 = {
-  brand: 'BMW',
-  model: '700',
-  a: 'red',
-  maxSpeed: 240,
-  isNew: true,
-  dimensions: {
-    weight: 2000,
-    height: 150,
-    length: 4.2,
-  },
-};
-const car2 = {
-  brand: 'BMW',
-  model: '700',
-  a: 'red',
-  maxSpeed: 240,
-  isNew: true,
-  dimensions: {
+// const car1 = {
+//   brand: 'BMW',
+//   model: '700',
+//   a: 'red',
+//   maxSpeed: 240,
+//   isNew: true,
+//   dimensions: {
+//     weight: 2000,
+//     height: 150,
+//     length: 4.2,
+//   },
+// };
+// const car2 = {
+//   brand: 'BMW',
+//   model: '700',
+//   a: 'red',
+//   maxSpeed: 240,
+//   isNew: true,
+//   dimensions: {
      
-    height: 150,
-    length: 4.2,
-  },
-};
+//     height: 150,
+//     length: 4.2,
+//   },
+// };
 // не працює як треба
 // function createMessage(car) {
 //   const message = `
@@ -1445,7 +1445,7 @@ const car2 = {
 // function createMessage({
 //   dimensions: {
 //     weight = 'No Info',
-//     height = 'No Info', 
+//     height = 'No Info',
 //     length = 'No Info',
 //   },
 //   a: color =  'No Info',
@@ -1463,3 +1463,67 @@ const car2 = {
 
     
 // createMessage(car2)
+
+// const forecast = {
+//   today: {
+//     low: 28,
+//     high: 32,
+//     icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+//   },
+//   tomorrow: {
+//     low: 27,
+//     high: 31,
+//   },
+// };
+// // Change code below this line
+// const {
+//   today: {
+//   low : lowToday,
+//   high : highToday,
+//   icon : todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+// },
+//     tomorrow : {
+//   low : lowTomorrow,
+//    high : highTomorrow,
+//    icon : tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",  
+//     }
+// } = forecast
+
+
+// function findMatches(first, ...args) {
+//   const matches = []; // Don't change this line
+
+//   for (const item of first) {
+//     if (args.includes(item)) {
+//      matches.push(item)
+//    }
+//  }
+
+//   return matches;
+// }
+//  console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+
+// const bookShelf = {
+//   books: ["The last kingdom", "Haze", "The guardian of dreams"],
+//   updateBook(oldName, newName) {
+//     // Change code below this line
+//     const bookIndex = this.books.indexOf(oldName);
+//     console.log(bookIndex);
+// this.books.splice(bookIndex, 1, newName)
+//       // Change code above this line
+//     }
+//   }
+
+// console.log(bookShelf.updateBook("Haze", "Dungeon chronicles"));
+
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  addPotion(potionName) {
+    // Change code below this line
+return this.potions.push(potionName)
+
+
+    // Change code above this line
+  },
+};
+console.log(atTheOldToad.addPotion("Invisibility"));
