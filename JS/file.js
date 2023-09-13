@@ -1516,14 +1516,62 @@
 
 // console.log(bookShelf.updateBook("Haze", "Dungeon chronicles"));
 
-const atTheOldToad = {
-  potions: ["Speed potion", "Dragon breath", "Stone skin"],
-  addPotion(potionName) {
-    // Change code below this line
-return this.potions.push(potionName)
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   addPotion(potionName) {
+//     // Change code below this line
+// return this.potions.push(potionName)
 
 
-    // Change code above this line
-  },
+//     // Change code above this line
+//   },
+// };
+// console.log(atTheOldToad.addPotion("Invisibility"));
+
+// function foo(...args) {
+//   console.log(args);
+// }
+// foo (1, 2, 3, 4, 5)
+
+// const user = {
+//   email: "mango@gmail",
+//   age: 20,
+// }
+// const { username = "User" } = user;
+// console.log(username);
+
+// const arr1 = [1, 2, 3, 4, 5];
+// const arr2 = [...arr1];
+// console.log(arr1 === arr2);
+
+// const user = {
+//   email: "mango@gmail",
+//   age: 20,
+// }
+// const { username } = user;
+// console.log(username);
+
+
+// ==================Callback функції================
+const mathOperation = (num1, num2, callback1, callback2) => {
+  if (num1 > num2) {
+    const result = callback1(num1, num2);
+    return result;
+  } else if (num2 > num1) {
+    return callback2(num1, num2);
+  } else {
+    return 'Enter another numbers';
+  } 
 };
-console.log(atTheOldToad.addPotion("Invisibility"));
+
+const add = (num1, num2) => num1 + num2;
+const substrackt = (num1, num2) => num2 - num1;
+
+const multiply = (num1, num2) => num1 * num2;
+const divide = (num1, num2) => num2 / num1;
+
+// console.log(mathOperation(10, 20, add, substrackt));
+// console.log(mathOperation(100, 20, add, substrackt));
+// console.log(mathOperation(200, 200, add, substrackt));
+// console.log(mathOperation(10, 20, multiply, divide));
+// console.log(mathOperation(100, 20, multiply, divide));
