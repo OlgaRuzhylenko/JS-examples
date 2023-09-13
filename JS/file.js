@@ -1575,3 +1575,5 @@ const divide = (num1, num2) => num2 / num1;
 // console.log(mathOperation(200, 200, add, substrackt));
 // console.log(mathOperation(10, 20, multiply, divide));
 // console.log(mathOperation(100, 20, multiply, divide));
+
+console.log(mathOperation(10, 20, {num1, num2} => num1 + num2, (num1, num2) => num2 - num1));
