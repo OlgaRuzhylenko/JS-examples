@@ -1829,19 +1829,46 @@
 
 // 6. Інлайн стрілочні функції
 // Виконайте рефакторинг коллбеків за допомогою стрілочних функцій
-function each(array, callback) {
-const newArr = [];
-for (const el of array) {
-  newArr.push(callback(el));
-}
-return newArr
+// function each(array, callback) {
+// const newArr = [];
+// for (const el of array) {
+//   newArr.push(callback(el));
+// }
+// return newArr
+// }
+
+// console.log(
+//   each([64, 49, 36, 25, 16], value => value * 2));
+// console.log(
+//   each([64, 49, 36, 25, 16], value => value -10));
+
+// 7. Метод forEach
+// виконайте тефакторинг коду за доп методу forEach та стрілочно функції
+
+// function logItems(items) {
+//   console.log(items);
+//   for (let i = 0; i < items.length; i +=1) {
+//     console.log(`${i + 1} - ${items[i]}`);
+//   }
+// }
+// const logItems = arr => arr.forEach((item, idx)=>console.log(`${idx + 1} - ${item}`))
+
+// logItems(['Mango', 'Poly', "Ajax"])
+
+// 8.Метод forEach
+// виконайте тефакторинг коду за доп методу forEach та стрілочно функції
+// function calculateAverage (...args) {
+//   let total = 0;
+//   for (let i = 0; i < args.length; i++) {
+//     total += args[i];
+//   }
+//   return total / args.length;
+// }
+const calculateAverage = (...arr) => { 
+  let total = 0;
+  arr.forEach(value => total += value )
+  console.log(total);
 }
 
-console.log(each([64, 49, 36, 25, 16], function (value) {
-  return value * 2;
-}),
-);
-console.log(each([64, 49, 36, 25, 16], function (value) {
-  return value -10;
-}),
-);
+
+console.log(calculateAverage(1, 2, 3, 4));
