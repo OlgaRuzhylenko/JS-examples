@@ -1689,16 +1689,90 @@
 
 // метод withdraw викликає onError якщо  amount більше TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess в іншому випадку
 
-const TRANSACTION_LIMIT = 1000;
+// const TRANSACTION_LIMIT = 1000;
 
-const account = {
-  username: 'Jacob',
-  balance: 400,
-};
+// const account = {
+//   username: 'Jacob',
+//   balance: 400,
 
-function handleSuccess(message) {
-  console.log(`Success! ${message}`);
-}
-function handleError(message) {
-  console.log(`Error! ${message}`);
-}
+//   withdraw (amount, onSuccess, onError){
+// if (amount > TRANSACTION_LIMIT) {
+//   onError(`TRANSACTION_LIMIT ${TRANSACTION_LIMIT}`)
+//   return
+// } else if(this.balance < amount) {
+//   onError(`Not enough in the account`);
+//   return;
+// }
+
+// this.balance -= amount;
+// onSuccess(`successfully ${amount}, balance ${this.balance}`)
+//   },
+//   deposit(amount, onSuccess, onError) {
+// if (amount > TRANSACTION_LIMIT) {
+//   onError(`TRANSACTION_LIMIT ${TRANSACTION_LIMIT}`)
+//   return;
+// }
+// else if(amount <= 0) {
+//   onError(`Nice try Bro`);
+//   return;
+// }
+// this.balance += amount;
+// onSuccess(`Added ${amount}, balance ${this.balance}`)
+//   }
+// };
+
+// function handleSuccess(message) {
+//   console.log(`Success! ${message}`);
+// }
+// function handleError(message) {
+//   console.log(`Error! ${message}`);
+// }
+// account.withdraw(2000, handleSuccess, handleError);
+// account.withdraw(600, handleSuccess, handleError);
+// account.withdraw(300, handleSuccess, handleError);
+// account.deposit(1700, handleSuccess, handleError);
+// account.deposit(0, handleSuccess, handleError);
+// account.deposit(-600, handleSuccess, handleError);
+// account.deposit(600, handleSuccess, handleError);
+
+// 3. Колбек функції
+// Напишіть функцію each(array, callback), яка першим параметром очікує масив, а другим - функцію, яка застосовується до кожного елемента масиву. Функція each повинна повернути новий масив, елементами якого будуть результати виклику коллбека
+
+// function each (array, callback) {
+// }
+
+// console.log(each([64, 49, 36, 25, 16], function (value) {
+//   return value * 2;
+// })
+// );
+// console.log(
+//   each([64, 49, 36, 25, 16], function (value) {
+//   return value -10;
+// })
+// );
+
+// 4. Стрілочні функції
+// Виконайте рефакторинг коду за допомогою стрілочних функцій
+function createProduct(partialProduct, callback) {
+    const product = {
+      id: Date.now(),
+      ...partialProduct  }
+    callback(product);
+    }
+  
+  const logProduct = product => console.log(product.name);
+  
+//робимо деструктуризацію
+  const logTotalPrice = ({price, quantity}) => console.log(price * quantity);
+  
+  createProduct({
+    name: 'apple',
+    price: 30, 
+    quantity: 3
+  }, logProduct);
+  createProduct({
+    name: 'lemon', 
+    price: 20, 
+    quantity: 5
+  }, logTotalPrice);
+  
