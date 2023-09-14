@@ -1586,24 +1586,25 @@
 // const result = makePizza();
 // const pointer = makePizza;
 
-const arr = [2, 6, 1, 7, 3]
+// const arr = [2, 6, 1, 7, 3]
 
-function each(arr, callback) {
-  let total = 0
-  for (const item of arr) {
-    total = callback(total, item)
-    // console.log(item);
-  }
-  return total
-}
-console.log(each(arr, add));
-console.log(each(arr, sum)); //0, бо total був 0 з початку
+// function each(arr, callback) {
+//   let total = arr[0]
+//   for (const item of arr) {
+//     total = callback(total, item)
+//     // console.log(item);
+//   }
+//   return total
+// }
+// console.log(each(arr, add));
+// console.log(each(arr, sum));  
 
-function add(first, second) {
-  return first + second
-}
+// function add(first, second) {
+//   return first + second
+// }
 
-function sum(first, second) {
-  return first * second
-}
+// function sum(first, second) {
+//   return first * second
+// }
 
+//  
