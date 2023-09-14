@@ -1753,26 +1753,95 @@
 
 // 4. Стрілочні функції
 // Виконайте рефакторинг коду за допомогою стрілочних функцій
-function createProduct(partialProduct, callback) {
-    const product = {
-      id: Date.now(),
-      ...partialProduct  }
-    callback(product);
-    }
+// const createProduct = (partialProduct, callback) => {
+//     const product = {
+//       id: Date.now(),
+//       ...partialProduct};
+//     callback(product);
+//     }
+
+// const createProduct = (partialProduct, callback) =>  callback({
+//       id: Date.now(),
+//       ...partialProduct});
+      
+//   const logProduct = product => console.log(product.name);
   
-  const logProduct = product => console.log(product.name);
+// //робимо деструктуризацію
+//   const logTotalPrice = ({price, quantity}) => console.log(price * quantity);
   
-//робимо деструктуризацію
-  const logTotalPrice = ({price, quantity}) => console.log(price * quantity);
+//   createProduct({
+//     name: 'apple',
+//     price: 30, 
+//     quantity: 3
+//   }, logProduct);
+//   createProduct({
+//     name: 'lemon', 
+//     price: 20, 
+//     quantity: 5
+//   }, logTotalPrice);
   
-  createProduct({
-    name: 'apple',
-    price: 30, 
-    quantity: 3
-  }, logProduct);
-  createProduct({
-    name: 'lemon', 
-    price: 20, 
-    quantity: 5
-  }, logTotalPrice);
-  
+
+// 5. Стрілочні функції
+// Виконайте рефакторинг коллбеків за допомогою стрілочних функцій
+// const TRANSACTION_LIMIT = 1000;
+
+// const account = {
+//   username: 'Jacob',
+//   balance: 400,
+
+//   withdraw (amount, onSuccess, onError){
+// if (amount > TRANSACTION_LIMIT) {
+//   onError(`TRANSACTION_LIMIT ${TRANSACTION_LIMIT}`)
+//   return
+// } else if(this.balance < amount) {
+//   onError(`Not enough in the account`);
+//   return;
+// }
+
+// this.balance -= amount;
+// onSuccess(`successfully ${amount}, balance ${this.balance}`)
+//   },
+//   deposit(amount, onSuccess, onError) {
+// if (amount > TRANSACTION_LIMIT) {
+//   onError(`TRANSACTION_LIMIT ${TRANSACTION_LIMIT}`)
+//   return;
+// }
+// else if(amount <= 0) {
+//   onError(`Nice try Bro`);
+//   return;
+// }
+// this.balance += amount;
+// onSuccess(`Added ${amount}, balance ${this.balance}`)
+//   }
+// };
+
+// const handleSuccess = message => console.log(`Success! ${message}`);
+
+// const handleError = message => console.log(`Error! ${message}`);
+
+// account.withdraw(2000, handleSuccess, handleError);
+// account.withdraw(600, handleSuccess, handleError);
+// account.withdraw(300, handleSuccess, handleError);
+// account.deposit(1700, handleSuccess, handleError);
+// account.deposit(0, handleSuccess, handleError);
+// account.deposit(-600, handleSuccess, handleError);
+// account.deposit(600, handleSuccess, handleError);
+
+// 6. Інлайн стрілочні функції
+// Виконайте рефакторинг коллбеків за допомогою стрілочних функцій
+function each(array, callback) {
+const newArr = [];
+for (const el of array) {
+  newArr.push(callback(el));
+}
+return newArr
+}
+
+console.log(each([64, 49, 36, 25, 16], function (value) {
+  return value * 2;
+}),
+);
+console.log(each([64, 49, 36, 25, 16], function (value) {
+  return value -10;
+}),
+);
