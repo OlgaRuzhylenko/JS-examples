@@ -1864,11 +1864,12 @@
 //   }
 //   return total / args.length;
 // }
-const calculateAverage = (...arr) => { 
-  let total = 0;
-  arr.forEach(value => total += value )
-  console.log(total);
-}
+// const calculateAverage = (...arr) => { 
+//   let total = 0;
+//   arr.forEach(value => total += value )
+//   // console.log(total);
+//   return total / arr.length
+// }
 
 
-console.log(calculateAverage(1, 2, 3, 4));
+// console.log(calculateAverage(1, 2, 3, 4));
