@@ -1578,10 +1578,32 @@
 // важко сприймається:
 // console.log(mathOperation(10, 20, (num1, num2) => num1 + num2, (num1, num2) => num2 - num1));
 
-function makePizza() {
-  return "Your pizza is being prepared, please wait.";
-}
-// Change code below this line
+// function makePizza() {
+//   return "Your pizza is being prepared, please wait.";
+// }
+// // Change code below this line
 
-const result = makePizza();
-const pointer = makePizza;
+// const result = makePizza();
+// const pointer = makePizza;
+
+const arr = [2, 6, 1, 7, 3]
+
+function each(arr, callback) {
+  let total = 0
+  for (const item of arr) {
+    total = callback(total, item)
+    // console.log(item);
+  }
+  return total
+}
+console.log(each(arr, add));
+console.log(each(arr, sum)); //0, бо total був 0 з початку
+
+function add(first, second) {
+  return first + second
+}
+
+function sum(first, second) {
+  return first * second
+}
+
