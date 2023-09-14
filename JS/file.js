@@ -1607,4 +1607,98 @@
 //   return first * second
 // }
 
-//  
+//  ======================forEach=========
+// const arr = [2, 6, 1, 7, 3];
+
+// //item - ітеруємий елемент
+// //idx - інтекс поточного елемента
+// //arr - масив, який перебираємо
+// arr.forEach(function(item, idx, arr){
+// // console.log(`item :`, item);
+// // console.log(`idx :`, idx);
+// // console.log(`arr :`, arr);
+// // arr[idx] = item * 2
+
+// console.log(`work with nymber ${item}`);
+// })
+// console.log(arr);
+ 
+// =============стрілочні функції===============
+//arrow
+//arguments відсутні
+//  const foo = (...rest) => {
+//   //не працює аргументс
+//   // console.log(arguments);
+//   console.log(rest);
+//  };
+//  foo(1, 2, 3, 4, 50)
+//  foo(1, 2, 3, 21, 555, 6254)
+
+// // неявне повернення
+//  const arr = [2, 6, 1, 7, 3]
+// function each(arr, callback) {
+//     let total = arr[0]
+//     for (const item of arr) {
+//       total = callback(total, item)
+//       // console.log(item);
+//     }
+//     return total
+//   }
+   
+//   const add = (first, second) => first + second
+//   console.log(each(arr, add));
+
+//   const sum = (first, second) => first * second
+//   console.log(each(arr, sum));  
+
+// 1. Колбек функції
+// Напишіть наступні функції:
+
+// createProduct(obj, callback) - приймає об'єкт товару без id, а також коллбек. Функція створює об'єкт товару, додаючи йому унікальний ідентифікатор у властивість id та викликає коллбек передаючи йому створений об'єкт
+// logProduct(product) - коллбек приймаючий об'єкт продукту і логуючи його в консоль
+// logTotalPrice(product) - коллбек, що приймає об'єкт продукту і логіює загальну вартість товару в консоль
+// function createProduct(obj, callback) {
+//   const product = {
+//     id: Date.now(),
+//     ...obj
+//   }
+//   callback(product)
+//   console.log(product);
+// }
+
+// function logProduct(obj){
+// console.log(`Product ${obj.name}`);
+// }
+// //зробимо деструктуризацію
+// function logTotalPrice({price, quantity}){
+// console.log(`Total price ${price * quantity}`);
+// }
+// createProduct({
+//   name: 'apple',
+//   price: 30, 
+//   quantity: 3
+// }, logProduct);
+// createProduct({
+//   name: 'lemon', 
+//   price: 20, 
+//   quantity: 5
+// }, logTotalPrice);
+
+// 2. Колбек функції
+// Додайте в об'єкт account методи withdraw (amount, onSuccess, onError) та deposit (amount, onSuccess, onError), де перший параметр це сума операції, а другий та третій - коллбеки
+
+// метод withdraw викликає onError якщо  amount більше TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess в іншому випадку
+
+const TRANSACTION_LIMIT = 1000;
+
+const account = {
+  username: 'Jacob',
+  balance: 400,
+};
+
+function handleSuccess(message) {
+  console.log(`Success! ${message}`);
+}
+function handleError(message) {
+  console.log(`Error! ${message}`);
+}
