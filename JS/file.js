@@ -1873,3 +1873,113 @@
 
 
 // console.log(calculateAverage(1, 2, 3, 4));
+
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// makePizza("Royal Grand", function deliverPizza(pizzaName) {
+//   console.log(`Delivering pizza ${pizzaName}.`);
+// });
+// // Change code below this line
+
+// makePizza("Ultracheese");
+
+
+// 1.
+// // перша коллбек функція
+// // deliverPizza - назва першої коллбек функції, вона підставлена у змінну із виводом необхідного повідомлення вище
+// // pizzaNamе - назва із змінної, яка буде змінюватись, залежно від піци
+// // після return формуємо перше повідомлення
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// // Chande code below this line
+// // функція вищого порядку
+// // makeMessage - її назва, вона повинна бути в змінних, де оголошується два повідомлення про готовку чи доставку
+// // 1 параметр - назва змінної, самої першої
+// // 2 параметр - callback
+
+// function makeMessage(pizzaName, callback) {
+ 
+//   return callback(pizzaName);
+// }
+
+// // 1. оголошуємо змінну, в яку пишемо назву піци
+// const pizzaName = 'Гавайська'
+
+// // 2. оголошуємо повідомлення, яке показуватиме, що ця піца доставляється
+// // deliveryMessage - самостійно,  makeMessage - це назва функції вищого порядку, яка в самому кінці
+// // pizzaName - змінна, в яку напишеться назва піци, deliverPizza - перша коллбек функція
+// const deliveryMessage = makeMessage(pizzaName, deliverPizza);
+// console.log(deliveryMessage);
+
+// const preparingMessage = makeMessage(pizzaName, makePizza);
+// console.log(preparingMessage);
+
+
+// // 2.
+// //Доповни другий виклик функції makePizza(pizzaName, callback), передавши другим аргументом інлайн колбек-функцію eatPizza(pizzaName), яка логує рядок "Eating pizza <назва піци>".
+
+// // Є дві функції function makePizza і  function deliverPizza
+// // перший аргумент pizzaName - це назва піци, яку треба приготувати
+// // другий аргумент callback - це коллбек функція
+// //В тілі цієї функції відбувається вивід текстового повідомлення, яке повідомляє про приготування піци,  і після цього викликається колбек-функція callback з аргументом pizzaName.
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// //function deliverPizza це функція яка виводить повідомлення про доставку піци, використовуючи передане їй ім'я піци (pizzaName).
+// // перша піца "Royal Grand" записана у вигляді рядку
+// //перший виклик makePizza має першим аргументом "Royal Grand", а другим колбек функцію
+// //спочатку формується повідомлення про приготування піци (function makePizza вище), потім виконується колбек функція і виводить повідомлення про доставку
+// makePizza("Royal Grand", function deliverPizza(pizzaName) {
+//   console.log(`Delivering pizza ${pizzaName}.`);
+// });
+// // Change code below this line
+
+// makePizza("Ultracheese", function eatPizza(pizzaName) {
+//   console.log(`Eating pizza ${pizzaName}.`);
+// }
+// ) 
+
+// 4. Необхідно написати логіку обробки замовлення піци. Виконай рефакторинг методу order таким чином, щоб він приймав другим і третім параметром два колбеки onSuccess і onError.
+
+// Якщо у властивості pizzas відсутня піца з назвою з параметра pizzaName, метод order повинен повертати результат виклику колбека onError, передаючи йому аргументом рядок "There is no pizza with a name <имя пиццы> in the assortment."
+// Якщо у властивості pizzas присутня піца з назвою з параметра pizzaName, метод order повинен повертати результат виклику колбека onSuccess, передаючи йому аргументом назву замовленої піци
+const pizzaPalace = {
+  pizzas: ["Ultracheese", "Smoked", "Four meats"],
+  order: function(pizzaName, onSuccess, onError) {
+if (!this.pizzas.includes(pizzaName)) {
+  console.log("There is no pizza with a name${pizzaName} in the assortment.");
+  onError ();
+} else {
+  console.log(pizzaName);
+  onSuccess();
+}
+  }
+};
+// Change code above this line
+
+// Callback for onSuccess
+function makePizza(pizzaName) {
+  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+}
+
+// Callback for onError
+function onOrderError(error) {
+  return `Error! ${error}`;
+}
+
+// Method calls with callbacks
+pizzaPalace.order("Smoked", makePizza, onOrderError);
+pizzaPalace.order("Four meats", makePizza, onOrderError);
+pizzaPalace.order("Big Mike", makePizza, onOrderError);
+pizzaPalace.order("Vienna", makePizza, onOrderError);
