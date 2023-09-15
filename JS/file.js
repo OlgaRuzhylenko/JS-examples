@@ -1954,32 +1954,47 @@
 
 // Якщо у властивості pizzas відсутня піца з назвою з параметра pizzaName, метод order повинен повертати результат виклику колбека onError, передаючи йому аргументом рядок "There is no pizza with a name <имя пиццы> in the assortment."
 // Якщо у властивості pizzas присутня піца з назвою з параметра pizzaName, метод order повинен повертати результат виклику колбека onSuccess, передаючи йому аргументом назву замовленої піци
-const pizzaPalace = {
-  pizzas: ["Ultracheese", "Smoked", "Four meats"],
-  order: function(pizzaName, onSuccess, onError) {
-if (!this.pizzas.includes(pizzaName)) {
-  console.log("There is no pizza with a name${pizzaName} in the assortment.");
-  onError ();
-} else {
-  console.log(pizzaName);
-  onSuccess();
-}
-  }
-};
-// Change code above this line
+// const pizzaPalace = {
+//   pizzas: ["Ultracheese", "Smoked", "Four meats"],
+//   order: function(pizzaName, onSuccess, onError) {
+// if (!this.pizzas.includes(pizzaName)) {
+//   console.log("There is no pizza with a name${pizzaName} in the assortment.");
+//   onError ();
+// } else {
+//   console.log(pizzaName);
+//   onSuccess();
+// }
+//   }
+// };
+// // Change code above this line
 
-// Callback for onSuccess
-function makePizza(pizzaName) {
-  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
-}
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
 
-// Callback for onError
-function onOrderError(error) {
-  return `Error! ${error}`;
-}
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
 
-// Method calls with callbacks
-pizzaPalace.order("Smoked", makePizza, onOrderError);
-pizzaPalace.order("Four meats", makePizza, onOrderError);
-pizzaPalace.order("Big Mike", makePizza, onOrderError);
-pizzaPalace.order("Vienna", makePizza, onOrderError);
+// // Method calls with callbacks
+// pizzaPalace.order("Smoked", makePizza, onOrderError);
+// pizzaPalace.order("Four meats", makePizza, onOrderError);
+// pizzaPalace.order("Big Mike", makePizza, onOrderError);
+// pizzaPalace.order("Vienna", makePizza, onOrderError);
+
+function personName(name, lastName, callback) {
+  const fullName = `${name} ${lastName}`;
+  showName(fullName);
+  // console.log(name);
+  // console.log(lastName);
+}
+ 
+personName('Olga', 'Ruzhylenko');
+personName('Alex', 'Ruzhylenko');
+
+function showName(fullName) {
+  console.log(fullName);
+}
+// 
