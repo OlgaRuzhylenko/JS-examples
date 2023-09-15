@@ -1984,17 +1984,83 @@
 // pizzaPalace.order("Big Mike", makePizza, onOrderError);
 // pizzaPalace.order("Vienna", makePizza, onOrderError);
 
-function personName(name, lastName, callback) {
-  const fullName = `${name} ${lastName}`;
-  showName(fullName);
-  // console.log(name);
-  // console.log(lastName);
-}
+// function personName(name, lastName, callback) {
+//   const fullName = `${name} ${lastName}`;
+//   showName(fullName);
+//   // console.log(name);
+//   // console.log(lastName);
+// }
  
-personName('Olga', 'Ruzhylenko');
-personName('Alex', 'Ruzhylenko');
+// personName('Olga', 'Ruzhylenko');
+// personName('Alex', 'Ruzhylenko');
 
-function showName(fullName) {
-  console.log(fullName);
+// function showName(fullName) {
+//   console.log(fullName);
+// }
+// /
+// const arr = [2, 5, 4, 8, 6]
+
+// function each (arr, callback) {
+//   let total = 0;
+//   for (const item of arr) {
+//     total = callback(total, item)
+//   // console.log(item);
+// }
+// return total;
+//  };
+//  console.log(each(arr, add));
+
+//  function add (first, second) {
+// return first + second
+//  };
+//  function sum (first, second) {
+//   return first * second
+//    };
+//  const pizzaName = '111'
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// // Chande code below this line
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+// console.log(makeMessage(pizzaName, deliverPizza));
+// // console.log(makeMessage(pizzaName, makePizza));
+// function registerGuest(name, callback) {
+//   console.log(`Реєструємо гостя ${name}.`);
+//   callback(name);
+// }
+
+// // Передаємо інлайн-функцію greet у якості колбека
+// registerGuest("Mango", function greet(name) {
+//   console.log(`Ласкаво просимо ${name}.`);
+// });
+
+// // Передаємо інлайн-функцію notify у якості колбека
+// registerGuest("Poly", function notify(name) {
+//   console.log(`Шановний(а) ${name}, ваш номер буде готовий за 30 хвилин.`);
+// });
+
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  // Change code below this line
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] > value) {
+      filteredNumbers.push(numbers[i]);
+    }
+  }
+numbers.forEach(function(item) {
+if (item > value) {
+   filteredNumbers.push(item);
 }
-// 
+})
+  // Change code above this line
+  return filteredNumbers;
+}
+console.log(filterArray([1, 2, 3, 4, 5], 3))
