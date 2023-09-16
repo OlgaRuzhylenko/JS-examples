@@ -2046,21 +2046,165 @@
 //   console.log(`Шановний(а) ${name}, ваш номер буде готовий за 30 хвилин.`);
 // });
 
-function filterArray(numbers, value) {
-  const filteredNumbers = [];
-  // Change code below this line
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
 
-  for (let i = 0; i < numbers.length; i += 1) {
-    if (numbers[i] > value) {
-      filteredNumbers.push(numbers[i]);
-    }
-  }
-numbers.forEach(function(item) {
-if (item > value) {
-   filteredNumbers.push(item);
-}
-})
-  // Change code above this line
-  return filteredNumbers;
-}
-console.log(filterArray([1, 2, 3, 4, 5], 3))
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] > value) {
+//       filteredNumbers.push(numbers[i]);
+//     }
+//   }
+// numbers.forEach(function(item) {
+// if (item > value) {
+//    filteredNumbers.push(item);
+// }
+// })
+//   // Change code above this line
+//   return filteredNumbers;
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 3))
+
+// ===========================16.09========================
+// todo Напиши скрипт, який для об'єкта user послідовно:
+//   - додасть поле mood зі значенням 'happy'
+//   - замінить hobby на 'skydiving'
+//   - замінить значення premium на false
+//   - виводить вміст об'єкта user у форматі ключ:значення,
+// використовуючи Object.keys() і for...of
+
+// todo У нас є об'єкт, у якому зберігаються заробітні плати команди.
+// Напишіть код для отримання суми усіх зарплат і збережіть його результат у змінній sum
+// Якщо об'єкт salaries порожній, то результат повинен бути 0
+
+// const salaries = {
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// }
+// //  let sum = 0;
+
+//  const values = Object.values(salaries);
+//  console.log(values);
+
+//  const total = values.reduce((acc, value) => acc + value, 0)
+// // sum = total;
+// console.log(total);
+
+// Напишіть дві функції
+// letMeSeeYourName(callback) - запитує ім"я користувача через prompt та викликає callback функцію
+// greet(name) - колбек, що приймає ім"я та виводить у консоль рядок "Привіт < name > "
+// Потрібно реалізувати перевірку, що prompt не порожній
+
+// function letMeSeeYourName (callback) {
+//   const userName = prompt("Enter your name");
+//   callback(userName);
+// }
+
+// function greet (name) {
+//   console.log(`Привіт ${name}`);
+// }
+
+// letMeSeeYourName(greet);
+
+
+// Напишіть дві функції
+// makeProduct(name, price, callback) - приймає ім"я та ціну товару, а також callback
+// Функція створює об"єкт товару, додає йому унікальний ідентифікатор у властивість id та викликає callback,
+// передаючи йому створений об"єкт
+// showProduct(product)  - колбек, що приймає об"єкт продукта та виводить його у консоль
+ 
+// function makeProduct(name, price, callback) {
+// const item = {
+//   id: Date.now(),
+//   name, 
+//   price,
+// };
+// callback(item);
+// }
+
+
+// function showProduct(product) {
+//   console.log(product);
+// }
+// makeProduct("Apple", 23, showProduct)
+
+// todo Напишіть функцію updateObject, яка приймає об'єкт і повертає новий об'єкт без вказаних параметрів
+// Результат, що очікується ({a: 1, b: 2, c: 3}, 'b', 'a') => {c: 3}
+
+// function updateObject (obj, ...rest) {
+//  // console.log(obj);
+// // console.log(rest);
+// const newObj = {};
+// const keys = Object.keys(obj);
+// // console.log(keys);
+// for (const key of keys) {
+//   // console.log(key);
+//   if (!rest.includes(key)) {
+// // console.log(key);
+// newObj[key] = obj[key];
+//   }
+// }
+// console.log(newObj);
+// }
+// updateObject ({a: 1, b: 2, c: 3}, 'b', 'a');
+
+// /www.freecodecamp.org
+//===========================================================
+// todo Створіть об'єкт calculator із трьома методами
+// read(a, b) - приймає два аргументи і зберігає їх як властивості об'єкта
+// sum() повертає суму збережених значень
+// mult() помножує збережені значення і повертає результат
+//==========================================================
+// Напиши скрипт керування особистим кабінетом інтернет банку.
+// Є об'єкт account, в якому потрібно реалізувати методи роботи із балансом та історією транзакцій
+
+// Типів транзакцій всього два.Можна або покласти гроші на рахунок, або зняти гроші з рахунка
+
+// const Transaction = {
+//   DEPOSIT: 'deposit',
+//   WITHDRAW: 'withdraw',
+// }
+
+// // Кожна транзакція - це об'єкт із властивостями id, type, amount
+
+// const account = {
+//   //поточний баланс рахунку
+//   balance: 0,
+
+//   //історія транзакцій
+//   transactions: [],
+
+//   // Метод створює та повертає об'єкт транзакцій
+//   // Приймає суму та тип транзакції
+// createTransaction(type, amount) {
+//   return {
+//     type,
+//     amount,
+//   }
+// },
+
+// // Метод відповідає за додавання суми до балансу.
+// // Приймає суму транзакції
+// // Викликає createTransaction для створення об'єкта транзакції
+// // Після чого додає його до історії транзакцій
+
+// deposit(amount) {},
+
+// // Метод відповідає за зняття суми з балансу.
+// // Приймає суму тразакцій.
+// // Викликає createTransaction для створення об'єкта транзакції
+// // Після чого додає його до історії транзакцій
+// // Якщо amount більше за поточний баланс, виводимо повідомлення про те, що на рахунку недостатньо коштів
+
+// withdraw(amount) {},
+
+// // Метод, що повертає поточний баланс
+// getBalance() {},
+
+// // Метод шукає та повертає об'єкта транзакції по id
+// getTransactionDetails(id) {},
+
+// // Метод повертає кількість коштів певного типу тразакції зі всієї історії транзакції
+// getTransactionType(type) {},
+// }
