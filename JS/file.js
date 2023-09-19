@@ -2298,7 +2298,7 @@
 //     name: "Carey Barr",
 //     email: "careybarr@nurali.com",
 //     eyeColor: "blue",
-//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
 //     isActive: true,
 //     balance: 3951,
 //     gender: "male"
@@ -2307,7 +2307,7 @@
 //     name: "Blackburn Dotson",
 //     email: "blackburndotson@furnigeer.com",
 //     eyeColor: "brown",
-//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
 //     isActive: false,
 //     balance: 1498,
 //     gender: "male"
@@ -2323,7 +2323,90 @@
 //   }
 // ]
 
-// //Доповни функцію calculateTotalBalance(users) таким чином, щоб вона рахувала і повертала суму всіх коштів (властивість balance), які зберігають користувачі з масиву users.
-// const calculateTotalBalance = users => users.reduce ((acc, user) => {
-//   return acc + user.balance
-// }, 0)
+// //Доповни функцію getTotalBalanceByGender(users, gender) таким чином, щоб вона повертала загальний баланс користувачів (властивість balance), стать яких (властивість gender) збігається зі значенням параметра gender.
+
+// // Change code below this line
+// const getTotalBalanceByGender = (users, gender) => {
+//   return 
+//   };
+//   // Change code above this line
+
+//===============Перебираючі методи масиву=======
+const cars = [
+  { make: 'Honda', model: "CR-V", type: "suv", amount: 14, price: 24045, onSale: true},
+  { make: 'Honda', model: "Accord", type: "sedan", amount: 2, price: 22455, onSale: true},
+  { make: 'Mazda', model: "Mazda 6", type: "sedan", amount: 8, price: 24195, onSale: false},
+  { make: 'Mazda', model: "CX-9", type: "suv", amount: 7, price: 31520, onSale: true},
+  { make: 'Toyota', model: "4Runner", type: "suv", amount: 19, price: 34210, onSale: false},
+  { make: 'Toyota', model: "Sequoia", type: "suv", amount: 16, price: 45560, onSale: false},
+  { make: 'Toyota', model: "Tacoma", type: "truck", amount: 4, price: 24320, onSale: true},
+  { make: 'Ford', model: "F-150", type: "truck", amount: 11, price: 27110, onSale: true},
+  { make: 'Ford', model: "Fusion", type: "sedan", amount: 13, price: 22120, onSale: true},
+  { make: 'Ford', model: "Explorer", type: "suv", amount: 6, price: 31660, onSale: false},
+];
+
+// 1. Метод map
+// Нехай функція getModels повертає масив моделей (поле model) всіх автомобілей
+// const getModels  = cars => {
+// return cars.map(car => car.model);
+// }
+// // getModels(cars)
+// console.table(getModels(cars));
+
+// 2.  Метод map
+// Нехай функція makeCarsWithDiscont повертає новий масив об'єктів зі змінним значенням властивості Price залежно від переданої знижки
+// const makeCarsWithDiscont = (cars, discont) => {
+// return cars.map(item => ({
+//   ...item,
+//   price: item.price * (1- discont)
+// }));
+// };
+// console.table(makeCarsWithDiscont(cars, 0.2));
+// console.table(makeCarsWithDiscont(cars, 0.4));
+
+// 3. метод Filter 
+// Нехай функція filerByPrice повертає масив автомобілів, ціна яких менша ніж значення параметра threshold
+// { make: 'Ford', 
+// model: "Explorer", 
+// type: "suv", 
+// amount: 6, 
+// price: 31660, 
+// onSale: false
+// },
+// const filterByPrice = (cars, threshold) => {
+//   return cars.filter(({price}) => price < threshold)
+// };
+// console.log(filterByPrice(cars, 30000));
+// console.log(filterByPrice(cars, 25000));
+
+// 4. метод Filter 
+// Нехай функція getCarsWithDiscont повертає масив автомобілів, властивість onSale яких true
+// { make: 'Ford', 
+// model: "Explorer", 
+// type: "suv", 
+// amount: 6, 
+// price: 31660, 
+// onSale: false
+// },
+//  const getCarsWithDiscont = cars => {
+// // return cars.filter((car) => car.onSale)
+// // тепер деструктуризуємо
+//  return cars.filter(({onSale}) => onSale)
+//  };
+//  console.table(getCarsWithDiscont(cars));
+
+// 5. метод Filter 
+// Нехай функція getCarsWithType повертає масив автомобілей, тип яких збігається зі значенням параметра type
+// { make: 'Ford', 
+// model: "Explorer", 
+// type: "suv", 
+// amount: 6, 
+// price: 31660, 
+// onSale: false
+// },
+
+// const getCarsWithType = (cars, type) =>  cars.filter(({type : carType}) => carType === type)
+
+
+// console.table(getCarsWithType(cars, 'suv'));
+// console.table(getCarsWithType(cars, 'sedan'));
