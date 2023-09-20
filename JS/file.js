@@ -2461,3 +2461,29 @@ const cars = [
 // console.table(sortByModel(cars, 'asc'));
 // console.table(sortByModel(cars, 'desc'));
 
+// 10. метод reduce
+// Нехай функція getTotalAmount повертає загальну кількість автомобілів (значення властивості amount)
+//{ make: 'Ford',
+// model: "Explorer",
+// type: "suv",
+// amount: 6,
+// price: 31660,
+// onSale: false
+// },
+// const getTotalAmount = cars => {
+//   return cars.reduce((acc, car) => acc + car.amount
+//   ,0)
+// }
+
+// const getTotalAmount = cars => {
+//   return cars.reduce((acc, {amount}) => acc + amount
+//   ,0)
+// }
+// console.log(getTotalAmount(cars));
+
+// 11. Ланцюжки методів
+// Нехай функція getAvailableCarName повертає масив моделей авто, але тільки тих, які зараз на розпродажі
+
+const getAvailableCarName = cars => { }
+
+console.table(getAvailableCarName(cars));
