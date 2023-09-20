@@ -2364,13 +2364,13 @@ const cars = [
 // console.table(makeCarsWithDiscont(cars, 0.2));
 // console.table(makeCarsWithDiscont(cars, 0.4));
 
-// 3. метод Filter 
+// 3. метод Filter
 // Нехай функція filerByPrice повертає масив автомобілів, ціна яких менша ніж значення параметра threshold
-// { make: 'Ford', 
-// model: "Explorer", 
-// type: "suv", 
-// amount: 6, 
-// price: 31660, 
+// { make: 'Ford',
+// model: "Explorer",
+// type: "suv",
+// amount: 6,
+// price: 31660,
 // onSale: false
 // },
 // const filterByPrice = (cars, threshold) => {
@@ -2379,13 +2379,13 @@ const cars = [
 // console.log(filterByPrice(cars, 30000));
 // console.log(filterByPrice(cars, 25000));
 
-// 4. метод Filter 
+// 4. метод Filter
 // Нехай функція getCarsWithDiscont повертає масив автомобілів, властивість onSale яких true
-// { make: 'Ford', 
-// model: "Explorer", 
-// type: "suv", 
-// amount: 6, 
-// price: 31660, 
+// { make: 'Ford',
+// model: "Explorer",
+// type: "suv",
+// amount: 6,
+// price: 31660,
 // onSale: false
 // },
 //  const getCarsWithDiscont = cars => {
@@ -2395,13 +2395,13 @@ const cars = [
 //  };
 //  console.table(getCarsWithDiscont(cars));
 
-// 5. метод Filter 
+// 5. метод Filter
 // Нехай функція getCarsWithType повертає масив автомобілей, тип яких збігається зі значенням параметра type
-// { make: 'Ford', 
-// model: "Explorer", 
-// type: "suv", 
-// amount: 6, 
-// price: 31660, 
+// { make: 'Ford',
+// model: "Explorer",
+// type: "suv",
+// amount: 6,
+// price: 31660,
 // onSale: false
 // },
 
@@ -2410,3 +2410,54 @@ const cars = [
 
 // console.table(getCarsWithType(cars, 'suv'));
 // console.table(getCarsWithType(cars, 'sedan'));
+
+// 6. Метод find
+// Знайти автомобіль за його моделлю
+// const getCarByModel = (cars, model) => cars.find(({model : CarModel}) => model === CarModel);
+
+
+// console.log(getCarByModel(cars, "F-150"));
+// console.log(getCarByModel(cars, "CX-9"));
+
+// 7. Метод Sort
+// Нехай функція sortByAscendingAmount повертає новий масив автомобілів, відсортований за зростанням значення якості amount
+//{ make: 'Ford',
+// model: "Explorer",
+// type: "suv",
+// amount: 6,
+// price: 31660,
+// onSale: false
+// },
+// const sortByAscendingAmount = cars => {
+//   return [...cars].sort((a, b) => a.price - b.price)
+//   };
+// const sortByAscendingAmount = cars => [...cars].sort(({price : a}, {price: b}) => a - b);
+
+// console.table(sortByAscendingAmount(cars));
+
+// 8. Метод Sort
+// Нехай функція sortByDescendingPrice повертає новий масив автомобілів, відсортований за зменшенням значення властивості price
+// const sortByDescendingPrice = cars => {
+//   return [...cars].sort((a, b) => b.price - a.price)
+//  };
+
+// console.table(sortByDescendingPrice(cars));
+
+// 9. Метод Sort
+// Нехай функція sortByModel повертає новий масив автомобілів, відсортований за назвою моделі в алфавітному та зворотному алфавітному порядку, а залежності від значення параметра order
+
+// const sortByModel = (cars, order) => {
+//   if (order === 'asc') {
+//     return [...cars].sort((a, b) => a.model.localeCompare(b.model));
+//   } else {
+//     return [...cars].sort((a, b) => b.model.localeCompare(a.model))
+//   }
+// }
+  
+// const sortByModel = (cars, order) => cars.sort(({model : a}, {model :b}) => order === 'asc'
+//   ? a.localeCompare(b.model)
+//   : b.localeCompare(a.model))
+
+// console.table(sortByModel(cars, 'asc'));
+// console.table(sortByModel(cars, 'desc'));
+
