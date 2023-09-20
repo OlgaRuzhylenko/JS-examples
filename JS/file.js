@@ -2500,9 +2500,12 @@ const cars = [
 // price: 31660,
 // onSale: false
 // },
-const getSortedCarsOnSale = cars => {
-  return cars.filter(({ onSale }) => onSale)
-  .sort(({price : a}, {price : b}) => a - b)
-}
 
-console.log(getSortedCarsOnSale(cars));
+
+// const getSortedCarsOnSale = cars => {
+//   return cars.filter(({ onSale }) => onSale)
+//   .sort(({price : a}, {price : b}) => a - b)
+// }
+
+// console.log(getSortedCarsOnSale(cars));
+
