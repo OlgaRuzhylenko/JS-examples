@@ -2484,6 +2484,25 @@ const cars = [
 // 11. Ланцюжки методів
 // Нехай функція getAvailableCarName повертає масив моделей авто, але тільки тих, які зараз на розпродажі
 
-const getAvailableCarName = cars => { }
+// const getAvailableCarName = cars => {
+//   return cars.filter(({onSale}) => onSale)
+//   .map(({model}) => model)
+//  }
 
-console.table(getAvailableCarName(cars));
+// console.log(getAvailableCarName(cars));
+
+// 12. Ланцюжки методів
+// Нехай функція getSortedCarsOnSale повертає масив автомобілів на розпродажі, відсортованих за зростанням ціни
+//{ make: 'Ford',
+// model: "Explorer",
+// type: "suv",
+// amount: 6,
+// price: 31660,
+// onSale: false
+// },
+const getSortedCarsOnSale = cars => {
+  return cars.filter(({ onSale }) => onSale)
+  .sort(({price : a}, {price : b}) => a - b)
+}
+
+console.log(getSortedCarsOnSale(cars));
