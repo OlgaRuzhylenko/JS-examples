@@ -2509,3 +2509,74 @@ const cars = [
 
 // console.log(getSortedCarsOnSale(cars));
 
+// const objA = {
+//   age: 22,
+//   myAge() {
+//     console.log(this);
+//   }
+// }
+// objA.myAge()
+
+// const objA = {
+//   age: 22,
+//   myAge: () => {
+//     const test = () => {
+//       console.log(this);
+//       test()
+//    }
+//   }
+// }
+// objA.myAge()
+
+
+// const objA = {
+//   age: 22,
+//   myAge() {
+//     const test = () => {
+//       console.log(this);
+//       test()
+//    }
+//   }
+// }
+// objA.myAge()
+
+// const objA = {
+//   age: 22,
+//   myAge() {
+//     function test () {
+//       console.log(this);
+//    }
+//       test()
+//   }
+// }
+// objA.myAge()
+
+// const objA = {
+//   age: 22,
+//   skills: {
+//     skill: ["html", 'css'],
+//     foo() {
+//       const boo = () => {
+//         console.log(this);
+//       }
+//       boo()
+//     }
+// }
+// }
+// objA.skills.foo()
+
+const objA = {
+  age: 22,
+  myAge() {
+    const test = () => {
+     console.log(this);
+    }
+    test()
+  }
+}
+
+const objB = {
+  age: 12,
+  someFunction: objA.myAge
+}
+objB.someFunction()
