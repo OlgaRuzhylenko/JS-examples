@@ -2707,33 +2707,32 @@ const cars = [
 
 // console.log(calculator);
 
-const customer = {
-  username: "Mango",
-  balance: 24000,
-  discount: 0.1,
-  orders: ["Burger", "Pizza", "Salad"],
-  // Change code below this line
-  getBalance() {
-    return this.balance;
-  },
-  getDiscount() {
-    return this.discount;
-  },
-  setDiscount(value) {
-    this.discount = this.value;
-  },
-  getOrders() {
-    return this.orders;
-  },
-  addOrder(cost, order) {
-    this.balance -= cost - cost * this.discount;
-    this.orders.push(this.order);
-  },
-  // Change code above this line
-};
+class StringBuilder {
+  constructor (initialValue = '') {
+    this.value = initialValue;
+  }
+  getValue() {
+    return this.value;
+  }
+  padEnd(str) {
+    return this.value.push(str);
+  }
+  padStart(str) {
+    return this.value.unshift(str);
+  }
+  padBoth(str) {
+     return this.value.unshift(str)
+    .push(str);
+  }
+}
 
-customer.setDiscount(0.15);
-console.log(customer.getDiscount()); // 0.15
-customer.addOrder(5000, "Steak");
-console.log(customer.getBalance()); // 19750
-console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
