@@ -2707,3 +2707,90 @@ const cars = [
 
 // console.log(calculator);
 
+// 1. Блогер
+// Напиши клас Blogger для створення об'єкта з наступними властивостями
+
+// email - пошта, рядок
+// age - вік, число
+// numberOfPosts - к-ть постів, число
+// topics - масив тем, на яких спеціалізується блогер
+// Клас чекає 1 параметр - об'єкт наалштувань з однойменними властивостями
+
+// Додай метод getInfo(), який повертає рядок: User ${пошта} is ${вік} years old and has ${к-ть постів} posts 
+
+// Додай метод updatePostCount(value), який у параметрі value приймає к-ть постів, які потрібно додати користувачеві
+// class Blogger {
+//   constructor({name, age, numberOfPosts, topics}){
+// this.email = name;
+// this.age = age;
+// this.numberOfPosts = numberOfPosts;
+// this.topics =  topics;
+//   }
+//   getInfo() {
+//     return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts.`
+//   }
+//   updatePostCount(value) {
+//     this.numberOfPosts += value
+//   }
+// }
+
+// const mango = new Blogger ({
+//   name: 'mango@mail.com',
+//   age: 24,
+//   numberOfPosts: 20,
+//   topics: ['tech', "cooking"],
+// });
+// console.log(mango.getInfo());
+// mango.updatePostCount(5);
+// console.log(mango.getInfo());
+
+// 2. Сховище
+// Напиши клас Storage, яки створює об'єкти для керування складом товарів. При виклику отримуватиме один аргумент - початковий масив товарів і записуватиме його властивість item
+
+// Додай методи класу:
+// getItems() - повертає масив товарів
+// addItem(item) - отримує новий товар і додає його до поточних
+// removeItem(item) - отримує товар і, якщо він є, ивдаляє його з поточних
+//-(x + 1)
+// 0 => false
+// -1 => true
+// -(0 + 1) => -1 => true
+// -(-1 + 1) => -0 => false
+//!!0 => Boolean(0)
+
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+//   getItems(){
+//     return this.items
+//   }
+//   addItem(item){
+//     if (!this.items.includes(item)){
+//       this.items.push(item)
+//       return
+//     }
+//     return 'такий товар вже є'
+//   }
+//   removeItem(item){
+//     const idx = this.items.indexOf(item);
+// if (this.items.includes(item)) { //!!~idx
+//   this.items.splice(idx, 1);
+// }
+
+//     console.log(idx);
+//   }
+// }
+
+// const storage = new Storage(['apple', 'lemon', 'grape', 'peach']);
+
+// const items = storage.getItems();
+// console.table(items);
+
+// storage.addItem('banana');
+// console.table(storage.items);
+
+// storage.removeItem('lemon');
+// console.table(storage.items);
+
+3.
