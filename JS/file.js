@@ -2803,18 +2803,21 @@ const cars = [
 // console.table(storage.items);
 
 3.
-function deliverPizza(pizzaName) {
-  return `Delivering ${pizzaName} pizza.`;
-}
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
+  // Change code below this line
 
-function makePizza(pizzaName) {
-  return `Pizza ${pizzaName} is being prepared, please wait...`;
+  // for (let i = 0; i < firstArray.length; i += 1) {
+  //   if (secondArray.includes(firstArray[i])) {
+  //     commonElements.push(firstArray[i]);
+  //   }
+  // }
+firstArray.forEach(function(item) {
+  if(secondArray.includes(item)) {
+    commonElements.push(item)
+  }
+)}
+  return commonElements;
+  // Change code above this line
 }
-
-// Chande code below this line
-function makeMessage(pizzaName, callback) {
-
-  return callback(pizzaName);
-}
-console.log(makeMessage("Royal Grand", makePizza));
- console.log(makeMessage("Ultracheese", deliverPizza));
+console.log(getCommonElements([1, 2, 3], [2, 4]));
