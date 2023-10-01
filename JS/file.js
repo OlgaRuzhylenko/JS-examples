@@ -2802,22 +2802,229 @@ const cars = [
 // storage.removeItem('lemon');
 // console.table(storage.items);
 
-3.
-function getCommonElements(firstArray, secondArray) {
-  const commonElements = [];
-  // Change code below this line
 
-  // for (let i = 0; i < firstArray.length; i += 1) {
-  //   if (secondArray.includes(firstArray[i])) {
-  //     commonElements.push(firstArray[i]);
-  //   }
-  // }
-firstArray.forEach(function(item) {
-  if(secondArray.includes(item)) {
-    commonElements.push(item)
-  }
-)}
-  return commonElements;
-  // Change code above this line
+//=====================30.09 =======================
+
+// const myObject = {
+//   _a: 100,
+
+//   get a() {
+//     return this._a;
+//   },
+//   set a(x) {
+//     return (this._a = x);
+//   },
+// };
+
+// myObject.a = 100500;
+// console.log(myObject.a);
+
+// console.log(Object.keys(function () {}));
+
+// function getTabLabel(tabName) {
+// const labels = {
+//   theory: '111',
+//   extras: '222',
+//   homework: '333',
+// };
+
+// return labels[tabName];
+// }
+
+// console.log(getTabLabel('homework'));
+
+const obj6 = {
+  a: 3,
+  log() {
+    console.log(this.a);
+  },
 }
-console.log(getCommonElements([1, 2, 3], [2, 4]));
+function invoke(callback) {
+  callback()
+}
+invoke(obj6.log.bind(obj2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//1) розібрати!!!
+// const makeChangeColor = function () {
+//   const changeColor = function (color) {
+//     // this.color = color
+//     console.log('changecolor -> this', this)
+//   }
+//   // changeColor()
+//   const sweat = {
+//     color: 'teal',
+//   }
+
+//   sweat.uptadeColor = changeColor
+//   // sweat.uptadeColor('red')
+
+//   return sweat.uptadeColor.bind(sweat)
+// }
+// const red = makeChangeColor()
+// red()
+// console.log(red) 
+
+// 2) 
+// const newObj = {
+//   a () {
+//     return this
+//   },
+//   b () {
+//     return this
+//   },
+//   c () {
+//     return this
+//   },
+// }
+
+// console.log(newObj.a().b().c())
+// 3) Замикання
+// Напишіть функцію makeCounter, яка повертає іншу функцію,
+//     яка рахує та виводить у консоль кількість своїх викликів
+// const makeCounter = () => {
+//   let countCall = 0;
+//   return () => (countCall += 1); 
+//  };
+// const currentCount = makeCounter();
+// console.log(currentCount());
+// console.log(currentCount());
+// console.log(currentCount());
+// console.log(currentCount());
+
+// 4. Замикання
+// // Напишіть функцію savePassword(password), яка приймає 
+// пароль та повертає внутрішню функцію,
+// //     яка приймає рядок та повертає 
+// true, якщо рядок співпадає зі збереженим паролем,
+// //     та false - якщо не співпадає
+
+//  function savePassword(password) {
+//   return (userPassword) => userPassword === password;
+//  }
+//  const checkUser = savePassword('111');
+//  console.log(checkUser('111'));
+//  console.log(checkUser('qwe111'));
+
+// 5.
+// Напиши клас Client, який створює об"єкт із властивостями login та 
+//email
+// оголоси приватні властивості #login #email, доступ до яких 
+//зроби через геттер та сеттер login email
+// class Client {
+//   #login;
+//   #email;
+//   constructor ({login ='', email =''}={}) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
+// get email() {
+//   return this.#email;
+//   }
+// set email(email) {
+// this.#email = email;
+// }
+// get login() {
+//   return this.#login;
+// }
+// set login(login) {
+//   this.#login = login;
+// }
+// }
+// const newUser = new Client({
+//   login: 'sdsd',
+//   email: '111@gmail.com'
+// }
+// )
+// console.log(newUser);
+// console.log(newUser.email);
+// newUser.login = '2222';
+// console.log(newUser);
+
+//6. // Напиши клас Notes, який керує колекцієї заміток у властивості items
+// Замітка - це об"єкт із властивостями text та priority
+// Додай класу статичну властивість Priopity,
+//     в якому буде зберігатися об"єкт з пріоритетами
+//     Додай методи addNote(note), removeNote(text), 
+//updatePriority(text, newPriority)
+
+// class Notes {
+//   static Priopity = {
+//     LOW: 'low',
+//     HIGHT: 'hight',
+//   };
+// constructor (){
+//   this.items = [];
+// }
+// addNote(note) {
+//   this.items.push(note);
+// }
+// removeNote(text) {
+//   this.items = this.items.filter(note => note.text !== text); 
+// }
+// updatePriority(text, newPriority) {
+//   this.items = this.items.map(note => {
+//     if (note.text === text) {
+//  return {...note, priority: newPriority};
+// }
+// return note } )
+// }
+// }
+// const notes = new Notes();
+
+// notes.addNote({text: 'qwert', priority: Notes.Priopity.LOW})
+// notes.addNote({text: 'sdfgs', priority: Notes.Priopity.HIGHT})
+
+// console.log(notes.items);
+
+// notes.updatePriority('qwert', Notes.Priopity.HIGHT)
+// console.log(notes.items);
+// notes.removeNote('sdfgs')
+// console.log(notes.items);
+
+//7. //TODO:======================
+//  Написати клас, який буде представляти зоопарк тварин.
+//  Створити загальний клас Animal для тварин.
+// У зоопарку повинні бути різні типи тварин, такі як ссавці, птахи, рептилії тощо.
+// Кожен тип тварин повинен мати свої властивості та методи, наприклад,
+//  методи для отримання інформації про тварину та для годівлі тварин.
+//  Крім того, зоопарк повинен мати метод для додавання тварин до списку та
+// метод для виведення списку всіх тварин у зоопарку.
+
+// class Animal {
+//   constructor (name, type) {
+//   this.name = name,
+//   this.type = type,
+//   },
+//   getInfo (){
+//     console.log(`Name : ${this.name}, Type: ${this.type}`);
+//   }
+  
+//   }
+//   class Birds extends Animal {
+//   constructor(name, type){
+//   super(name, type)
+//   this.food = food
+//   }
+//   }
+//   class Mammals extends Animal {
+  
+//   }
+//   class Reptiles extends Animal {
+  
+//   }
+//   const birds = new Birds('Mango', 'owl', 'bread')
+//   console.log(birds);
