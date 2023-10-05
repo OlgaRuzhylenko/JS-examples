@@ -32,10 +32,45 @@
 //  console.dir(evt.currentTarget.value);
 // }
 
-//submit
-const formEl = document.querySelector('.js-form');
-formEl.addEventListener('submit', onSubmit);
+// //submit
+// const formEl = document.querySelector('.js-form');
+// formEl.addEventListener('submit', onSubmit);
 
-function onSubmit() {
-    
-}
+// function onSubmit(evt) {
+//     evt.preventDefault()
+
+//     const {userAge, userName, userEmail} = evt.currentTarget.elements
+//     console.dir(userAge.value);
+//     console.dir(userName.value);
+//     console.dir(userEmail.value);
+
+//     const data = {
+//         name: userName.value,
+//         email: userEmail.value,
+//         age: userAge.value
+//     };
+//     console.log(data);
+// }
+
+//події клавіатури
+
+// const container = document.querySelector('.js-container');
+// // console.dir(container);
+
+// document.addEventListener('keydown', onKey);
+
+// function onKey(evt) {
+//     console.log(evt.code);
+//     if (evt.code === 'Escape') {
+//         container.classList.toggle('tog');
+//    }
+// }
+
+//заборона копіювання:
+// function onKey(evt) {
+//     console.log(evt);
+//     if (evt.ctrlKey && (evt.code === 'KeyC')) {
+//         evt.preventDefault()
+//         return;
+//     }
+// }
