@@ -2833,31 +2833,6 @@ const cars = [
 
 // console.log(getTabLabel('homework'));
 
-const obj6 = {
-  a: 3,
-  log() {
-    console.log(this.a);
-  },
-}
-function invoke(callback) {
-  callback()
-}
-invoke(obj6.log.bind(obj2))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //1) розібрати!!!
 // const makeChangeColor = function () {
 //   const changeColor = function (color) {
