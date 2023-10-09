@@ -74,3 +74,26 @@
 //         return;
 //     }
 // }
+
+//================хрестики-нулики==============
+const container = document.querySelector('.js-content')
+console.log(container);
+let player = 'X';
+let marcup = '';
+for (let i = 1; i < 10; i +=1) {
+  marcup += `<div class="item js-item" data-id="${i}"></div>`
+};
+console.log(marcup);
+container.innerHTML = marcup;
+
+container.addEventListener('click', onClick);
+
+function onClick(event) {
+  const {target} = event;
+  if (!target.classList.contains('js-item') || target.textContent) {
+    return;
+  }
+
+  target.textContent = player;
+  player = player === 'X' ? '0' : 'X'
+}
