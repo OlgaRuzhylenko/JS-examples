@@ -220,50 +220,114 @@
 // console.log(selectedTags);
 // }
 //=====================палітра===============================
-const colors = [
-  { hex: '#f44336', rgb: "244, 67, 54" },
-  { hex: '#e91e63', rgb: "233, 30, 99" },
-  { hex: '#9c27b0', rgb: "156, 39, 176" },
-  { hex: '#673ab7', rgb: "103, 58, 183" },
-  { hex: '#3f51b5', rgb: "63, 81, 181" },
-  { hex: '#2196f3', rgb: "33, 150, 243" },
-  { hex: '#00bcd4', rgb: "0, 188, 212" },
-  { hex: '#009688', rgb: "0, 150, 136" },
-  { hex: '#4caf50', rgb: "76, 175, 80" },
-  { hex: '#ffeb3b', rgb: "255, 235, 59" },
-  { hex: '#ff9800', rgb: "255, 152, 0" },
-  { hex: '#795548', rgb: "121, 85, 72" },
-  { hex: '#607d8b', rgb: "96, 125, 139" },
-];
+// const colors = [
+//   { hex: '#f44336', rgb: "244, 67, 54" },
+//   { hex: '#e91e63', rgb: "233, 30, 99" },
+//   { hex: '#9c27b0', rgb: "156, 39, 176" },
+//   { hex: '#673ab7', rgb: "103, 58, 183" },
+//   { hex: '#3f51b5', rgb: "63, 81, 181" },
+//   { hex: '#2196f3', rgb: "33, 150, 243" },
+//   { hex: '#00bcd4', rgb: "0, 188, 212" },
+//   { hex: '#009688', rgb: "0, 150, 136" },
+//   { hex: '#4caf50', rgb: "76, 175, 80" },
+//   { hex: '#ffeb3b', rgb: "255, 235, 59" },
+//   { hex: '#ff9800', rgb: "255, 152, 0" },
+//   { hex: '#795548', rgb: "121, 85, 72" },
+//   { hex: '#607d8b', rgb: "96, 125, 139" },
+// ];
 
-const paletteContainer = document.querySelector('.js-palette');
-const cardsMarkup = createColorCardsMarcup(colors); 
+// const paletteContainer = document.querySelector('.js-palette');
+// const cardsMarkup = createColorCardsMarcup(colors); 
 
-paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup)
+// paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup)
 
-paletteContainer.addEventListener('click', onPaletteContainerClick)
+// paletteContainer.addEventListener('click', onPaletteContainerClick)
 
-function createColorCardsMarcup(colors) {
-  return colors.map(({hex, rgb}) => {
-    return    `    
-     <div class="color-card">
-        <div
-          class="color-swatch"
-          data-hex="${hex}"
-          data-rgb="${rgb}"
-          style="background-color: ${hex}"
-        ></div>
-        <div class="color-meta">
-          <p>HEX: ${hex}</p>
-          <p>FGB: ${rgb}</p>
-        </div>
-      </div> `;
-  }).join('');
-} 
+// function createColorCardsMarcup(colors) {
+//   return colors.map(({hex, rgb}) => {
+//     return    `    
+//      <div class="color-card">
+//         <div
+//           class="color-swatch"
+//           data-hex="${hex}"
+//           data-rgb="${rgb}"
+//           style="background-color: ${hex}"
+//         ></div>
+//         <div class="color-meta">
+//           <p>HEX: ${hex}</p>
+//           <p>FGB: ${rgb}</p>
+//         </div>
+//       </div> `;
+//   }).join('');
+// } 
 
-function onPaletteContainerClick(evt) {
-  if (!evt.target.classList.contains('color-swatch')) {
-    return
-  }
-  console.log(evt.target.dataset.hex);
+// function onPaletteContainerClick(evt) {
+//   if (!evt.target.classList.contains('color-swatch')) {
+//     return
+//   }
+//   console.log(evt.target.dataset.hex);
+// }
+//===============================================================================
+const instance = basicLightbox.create(`
+    <h1>Dynamic Content</h1>
+    <p>You can set the content of the lightbox with JS.</p>
+`)
+console.log(instance);
+instance.show();
+
+const cars = [
+  {
+    id: 1,
+    car: "Honda",
+    type: "Civic",
+    price: 12000,
+img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-honda_civic_type_r-car-honda-white_car-420818.html'
+  },
+  {
+    id: 2,
+    car: "Audi",
+    type: "Q7",
+    price: 40000,
+img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-audi_q7-311915.html'
+  },
+  {
+    id: 3,
+    car: "BMW",
+    type: "5 series",
+    price: 9000,
+img: 'https://wallpaper.mob.org.ua/pc/image/cars-bmw_5_series-bmw_5-bmw-belii-vid_sboku-oblaka-115889.html'
+  },
+  {
+    id: 4,
+    car: "Honda",
+    type: "Accord",
+    price: 20000,
+img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-honda_accord-car-compact_car-honda-white_car-425341.html'
+  },
+  {
+    id: 5,
+    car: "Volvo",
+    type: "XC60",
+    price: 7000,
+img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-volvo_xc60-car-suv-volvo-white_car-425193.html'
+  },
+  ]
+
+
+
+const container = document.querySelector('.js-container')
+
+const marcup = cars.map(({img, car, id}) => `<li data-car-id=${id} class="js-target"><img class="js-target" src="${img}" alt="${car}" width="200"><h2 class="js-target">${car}</h2></li>`)
+
+container.insertAdjacentHTML("beforeend", marcup.join(''))
+container.addEventListener('click', onClick)
+
+function onClick(evt) {
+const {target} = evt;
+   if(!target.classList.contains("js-target")) {
+    return;
+   }
+
+const carId = target.dataset.carId ?? target.closest("li").dataset.carId;
+   console.log(carId);
 }
