@@ -85,7 +85,7 @@
 // }
 // // console.log(event.currentTarget);
 // console.log(event.target.dataset.color);
-// 
+//
 // //================хрестики-нулики==============
 // const container = document.querySelector('.js-content')
 // // console.log(container);
@@ -106,7 +106,7 @@
 // let history0 = [];
 
 // function createMarcup(){
-//   let marcup = ''; 
+//   let marcup = '';
 //   for (let i = 1; i < 10; i +=1) {
 //     marcup += `<div class="item js-item" data-id="${i}"></div>`
 //   };
@@ -166,8 +166,8 @@
 // if (evt.target.nodeName !== "BUTTON") {
 //   return;
 // };
-// console.log(evt.target); 
-// } 
+// console.log(evt.target);
+// }
 //=================================================
 // 1 варіант
 // const tagsContainer = document.querySelector('.js-tags');
@@ -197,25 +197,73 @@
 
 //   console.log(selectedTag);
 // }
-const tagsContainer = document.querySelector('.js-tags');
-const selectedTags = new Set();
-tagsContainer.addEventListener('click', onTagsContainerClick)
+// const tagsContainer = document.querySelector('.js-tags');
+// const selectedTags = new Set();
+// tagsContainer.addEventListener('click', onTagsContainerClick)
 
-function onTagsContainerClick(evt) {
-if (evt.target.nodeName !== "BUTTON") {
-  return;
-}
-const btn = evt.target;
-const tag = btn.dataset.value;
-const isActiveBtn = btn.classList.contains('tags__btn--active')
-// console.log(isActiveBtn);
-if (isActiveBtn) {
-  selectedTags.delete(tag)
-} else {
-  selectedTags.add(tag);
-}
+// function onTagsContainerClick(evt) {
+// if (evt.target.nodeName !== "BUTTON") {
+//   return;
+// }
+// const btn = evt.target;
+// const tag = btn.dataset.value;
+// const isActiveBtn = btn.classList.contains('tags__btn--active')
+// // console.log(isActiveBtn);
+// if (isActiveBtn) {
+//   selectedTags.delete(tag)
+// } else {
+//   selectedTags.add(tag);
+// }
 
-btn.classList.toggle('tags__btn--active');
+// btn.classList.toggle('tags__btn--active');
 
-console.log(selectedTags);
+// console.log(selectedTags);
+// }
+//=====================палітра===============================
+const colors = [
+  { hex: '#f44336', rgb: "244, 67, 54" },
+  { hex: '#e91e63', rgb: "233, 30, 99" },
+  { hex: '#9c27b0', rgb: "156, 39, 176" },
+  { hex: '#673ab7', rgb: "103, 58, 183" },
+  { hex: '#3f51b5', rgb: "63, 81, 181" },
+  { hex: '#2196f3', rgb: "33, 150, 243" },
+  { hex: '#00bcd4', rgb: "0, 188, 212" },
+  { hex: '#009688', rgb: "0, 150, 136" },
+  { hex: '#4caf50', rgb: "76, 175, 80" },
+  { hex: '#ffeb3b', rgb: "255, 235, 59" },
+  { hex: '#ff9800', rgb: "255, 152, 0" },
+  { hex: '#795548', rgb: "121, 85, 72" },
+  { hex: '#607d8b', rgb: "96, 125, 139" },
+];
+
+const paletteContainer = document.querySelector('.js-palette');
+const cardsMarkup = createColorCardsMarcup(colors); 
+
+paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup)
+
+paletteContainer.addEventListener('click', onPaletteContainerClick)
+
+function createColorCardsMarcup(colors) {
+  return colors.map(({hex, rgb}) => {
+    return    `    
+     <div class="color-card">
+        <div
+          class="color-swatch"
+          data-hex="${hex}"
+          data-rgb="${rgb}"
+          style="background-color: ${hex}"
+        ></div>
+        <div class="color-meta">
+          <p>HEX: ${hex}</p>
+          <p>FGB: ${rgb}</p>
+        </div>
+      </div> `;
+  }).join('');
 } 
+
+function onPaletteContainerClick(evt) {
+  if (!evt.target.classList.contains('color-swatch')) {
+    return
+  }
+  console.log(evt.target.dataset.hex);
+}

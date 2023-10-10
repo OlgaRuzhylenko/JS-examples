@@ -48,7 +48,7 @@ margin: 100px 50px 50px 50px;
     transition: background .1s;
 }; */
 
-.tags {
+/* .tags {
     display: flex;
     gap: 10px;
     list-style: none;
@@ -57,4 +57,9 @@ margin: 100px 50px 50px 50px;
 .tags__btn--active {
 color: #fff;
 background-color: blue;
+} */
+
+.color-swatch {
+    width: 100px;
+    height: 100px;
 }
