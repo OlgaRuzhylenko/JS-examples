@@ -267,67 +267,82 @@
 //   }
 //   console.log(evt.target.dataset.hex);
 // }
-//===============================================================================
-const instance = basicLightbox.create(`
-    <h1>Dynamic Content</h1>
-    <p>You can set the content of the lightbox with JS.</p>
-`)
-console.log(instance);
-instance.show();
+//=====================================================7 дз==========================
+// const instance = basicLightbox.create(`
+//     <h1>Dynamic Content</h1>
+//     <p>You can set the content of the lightbox with JS.</p>
+// `)
+// console.log(instance);
+// instance.show();
 
-const cars = [
-  {
-    id: 1,
-    car: "Honda",
-    type: "Civic",
-    price: 12000,
-img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-honda_civic_type_r-car-honda-white_car-420818.html'
-  },
-  {
-    id: 2,
-    car: "Audi",
-    type: "Q7",
-    price: 40000,
-img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-audi_q7-311915.html'
-  },
-  {
-    id: 3,
-    car: "BMW",
-    type: "5 series",
-    price: 9000,
-img: 'https://wallpaper.mob.org.ua/pc/image/cars-bmw_5_series-bmw_5-bmw-belii-vid_sboku-oblaka-115889.html'
-  },
-  {
-    id: 4,
-    car: "Honda",
-    type: "Accord",
-    price: 20000,
-img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-honda_accord-car-compact_car-honda-white_car-425341.html'
-  },
-  {
-    id: 5,
-    car: "Volvo",
-    type: "XC60",
-    price: 7000,
-img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-volvo_xc60-car-suv-volvo-white_car-425193.html'
-  },
-  ]
+// const cars = [
+//   {
+//     id: 1,
+//     car: "Honda",
+//     type: "Civic",
+//     price: 12000,
+// img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-honda_civic_type_r-car-honda-white_car-420818.html'
+//   },
+//   {
+//     id: 2,
+//     car: "Audi",
+//     type: "Q7",
+//     price: 40000,
+// img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-audi_q7-311915.html'
+//   },
+//   {
+//     id: 3,
+//     car: "BMW",
+//     type: "5 series",
+//     price: 9000,
+// img: 'https://wallpaper.mob.org.ua/pc/image/cars-bmw_5_series-bmw_5-bmw-belii-vid_sboku-oblaka-115889.html'
+//   },
+//   {
+//     id: 4,
+//     car: "Honda",
+//     type: "Accord",
+//     price: 20000,
+// img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-honda_accord-car-compact_car-honda-white_car-425341.html'
+//   },
+//   {
+//     id: 5,
+//     car: "Volvo",
+//     type: "XC60",
+//     price: 7000,
+// img: 'https://wallpaper.mob.org.ua/pc/image/vehicles-volvo_xc60-car-suv-volvo-white_car-425193.html'
+//   },
+//   ]
 
 
 
-const container = document.querySelector('.js-container')
+// const container = document.querySelector('.js-container')
 
-const marcup = cars.map(({img, car, id}) => `<li data-car-id=${id} class="js-target"><img class="js-target" src="${img}" alt="${car}" width="200"><h2 class="js-target">${car}</h2></li>`)
+// const marcup = cars.map(({img, car, id}) => 
+// `<li data-car-id=${id} class="js-target js-card">
+// <img class="js-target" src="${img}" alt="${car}" width="200">
+// <h2 class="js-target">${car}</h2>
+//  </li>`)
 
-container.insertAdjacentHTML("beforeend", marcup.join(''))
-container.addEventListener('click', onClick)
+// container.insertAdjacentHTML("beforeend", marcup.join(''))
+// container.addEventListener('click', onClick)
 
-function onClick(evt) {
-const {target} = evt;
-   if(!target.classList.contains("js-target")) {
-    return;
-   }
+// function onClick(evt) {
+// const {target} = evt;
+//    if(!target.classList.contains("js-target")) {
+//     return;
+//    }
 
-const carId = target.dataset.carId ?? target.closest("li").dataset.carId;
-   console.log(carId);
-}
+// const carId = target.dataset.carId ?? target.closest(".js-card").dataset.carId;
+// const currentItem = cars.find(({id}) => id === Number(carId));
+// console.log(currentItem);
+// const instance = basicLightbox.create(`
+// <div>
+// <img src="${currentItem.img}" alt="${currentItem.car}" width = "300">
+// <h2>${currentItem.car}</h2>
+// <h3>${currentItem.typr}</h3>
+// <p>${currentItem.price}</p>
+// </div>
+// `);
+// instance.show()
+// }
+
