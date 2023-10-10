@@ -24,7 +24,7 @@
     height: 100px;
 } */
 
-.container-1 {
+/* .container-1 {
 display: flex;
 margin: 100px 50px 50px 50px;
 }
@@ -46,5 +46,15 @@ margin: 100px 50px 50px 50px;
     cursor: pointer;
     vertical-align: middle; 
     transition: background .1s;
-};
+}; */
 
+.tags {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+   outline: 1px solid tomato;
+}
+.tags__btn--active {
+color: #fff;
+background-color: blue;
+}

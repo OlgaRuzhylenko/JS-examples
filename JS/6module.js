@@ -74,26 +74,148 @@
 //         return;
 //     }
 // }
+// ==================7 Поширення подій====================
+// const container = document.querySelector('.js-container');
+ 
+// container.addEventListener('click', onClick)
+// function onClick (event) {
 
-//================хрестики-нулики==============
-const container = document.querySelector('.js-content')
-console.log(container);
-let player = 'X';
-let marcup = '';
-for (let i = 1; i < 10; i +=1) {
-  marcup += `<div class="item js-item" data-id="${i}"></div>`
-};
-console.log(marcup);
-container.innerHTML = marcup;
+// if (!event.target.classList.contains('js-box')) {
+//  return;
+// }
+// // console.log(event.currentTarget);
+// console.log(event.target.dataset.color);
+// 
+// //================хрестики-нулики==============
+// const container = document.querySelector('.js-content')
+// // console.log(container);
 
-container.addEventListener('click', onClick);
+// const wins = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+//   [1, 4, 1],
+//   [2, 5, 8],
+//   [3, 6, 9],
+//   [1, 5, 9],
+//   [3, 5, 7],
+// ];
+// let player = 'X';
 
-function onClick(event) {
-  const {target} = event;
-  if (!target.classList.contains('js-item') || target.textContent) {
-    return;
-  }
+// let historyX = [];
+// let history0 = [];
 
-  target.textContent = player;
-  player = player === 'X' ? '0' : 'X'
+// function createMarcup(){
+//   let marcup = ''; 
+//   for (let i = 1; i < 10; i +=1) {
+//     marcup += `<div class="item js-item" data-id="${i}"></div>`
+//   };
+  
+//   console.log(marcup);
+//   container.innerHTML = marcup;
+// }
+// createMarcup()
+
+// container.addEventListener('click', onClick);
+
+// function onClick(event) {
+//   const {target} = event;
+//   if (!target.classList.contains('js-item') || target.textContent) {
+//     return;
+//   }
+
+//   let result = false;
+//   const id = Number(target.dataset.id)
+// if(player === 'X') {
+//   historyX.push(id);
+//   result =  isWinner(historyX)
+// }  else {
+// history0.push(id);
+// result =  isWinner(history0)
+//   }
+
+//   target.textContent = player;
+
+// if (result) {
+//   console.log(`Winner ${player}`);
+//   resetGame();
+//   return;
+// }
+// // console.log(isWinner(historyX));
+
+//   player = player === 'X' ? '0' : 'X'
+// }
+
+// function isWinner(arr) {
+// return wins.some(item => item.every((id) => arr.includes(id)))
+// }
+
+// function resetGame() {
+//   createMarcup();
+//   historyX = [];
+//   history0 = [];
+//   player = 'X'
+// }
+
+//==============================================
+
+// const container = document.querySelector('.js-container');
+// container.addEventListener('click', onClick)
+
+// function onClick(evt) {
+// if (evt.target.nodeName !== "BUTTON") {
+//   return;
+// };
+// console.log(evt.target); 
+// } 
+//=================================================
+// 1 варіант
+// const tagsContainer = document.querySelector('.js-tags');
+// let selectedTag = null;
+
+// console.log(tagsContainer);
+// tagsContainer.addEventListener('click', onTagsContainerClick)
+
+// function onTagsContainerClick (event) {
+//   if (event.target.nodeName !== 'BUTTON') {
+//     return;
+//   }
+
+// const currentActiveBtn = document.querySelector('.tags__btn--active');
+
+// // console.log(currentActiveBtn);
+
+// if(currentActiveBtn) {
+//   currentActiveBtn.classList.remove('tags__btn--active')
+// }
+
+// const nextActiveBtn = event.target;
+
+//   // console.log(event.target);
+//   nextActiveBtn.classList.add('tags__btn--active');
+//   selectedTag = nextActiveBtn.dataset.value;
+
+//   console.log(selectedTag);
+// }
+const tagsContainer = document.querySelector('.js-tags');
+const selectedTags = new Set();
+tagsContainer.addEventListener('click', onTagsContainerClick)
+
+function onTagsContainerClick(evt) {
+if (evt.target.nodeName !== "BUTTON") {
+  return;
 }
+const btn = evt.target;
+const tag = btn.dataset.value;
+const isActiveBtn = btn.classList.contains('tags__btn--active')
+// console.log(isActiveBtn);
+if (isActiveBtn) {
+  selectedTags.delete(tag)
+} else {
+  selectedTags.add(tag);
+}
+
+btn.classList.toggle('tags__btn--active');
+
+console.log(selectedTags);
+} 

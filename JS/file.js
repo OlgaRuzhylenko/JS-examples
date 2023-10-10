@@ -3004,16 +3004,5 @@ const cars = [
 //   const birds = new Birds('Mango', 'owl', 'bread')
 //   console.log(birds);
 
-// ==================7 Поширення подій====================
-// const container = document.querySelector('.js-container');
- 
-// container.addEventListener('click', onClick)
-// function onClick (event) {
 
-// if (!event.target.classList.contains('js-box')) {
-//  return;
-// }
-// // console.log(event.currentTarget);
-// console.log(event.target.dataset.color);
-// 
 
