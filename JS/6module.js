@@ -437,45 +437,45 @@
 // console.log(findUniq(['fghj', 'ghfj', 'abcd', 'jhgf', 'fghj', 'fgjh', 'ghif'])); // === "abcd"
 // console.log(findUniq(['qwe', 'camp', 'acmp', 'pmac', 'camp', 'apmc', 'pmac'])); // === "qwe "
 //==================================================
-const tech = [
-    { label: 'HTML' },
-    { label: 'CSS' },
-    { label: 'JavaScript' },
-    { label: 'Node.js' },
-    { label: 'Vue' },
-    { label: 'Next.js' },
-    { label: 'Mobx' },
-    { label: 'Redux' },
-    { label: 'React Rouder' },
-    { label: 'GraphQl' },
-    { label: 'PostgreSQL' },
-    { label: 'MangoDB' },
-];
+// const tech = [
+//     { label: 'HTML' },
+//     { label: 'CSS' },
+//     { label: 'JavaScript' },
+//     { label: 'Node.js' },
+//     { label: 'Vue' },
+//     { label: 'Next.js' },
+//     { label: 'Mobx' },
+//     { label: 'Redux' },
+//     { label: 'React Rouder' },
+//     { label: 'GraphQl' },
+//     { label: 'PostgreSQL' },
+//     { label: 'MangoDB' },
+// ];
 
-const refs = {
-    list: document.querySelector('.js-list'),
-    input: document.querySelector('#filter'),
-};
+// const refs = {
+//     list: document.querySelector('.js-list'),
+//     input: document.querySelector('#filter'),
+// };
 
-function createListItemsMarcup(items) {
-    return items.map(item => `<li>${item.label}</li>`).join('')
-};
+// function createListItemsMarcup(items) {
+//     return items.map(item => `<li>${item.label}</li>`).join('')
+// };
 
-const listItemsMarcup = createListItemsMarcup(tech);
+// const listItemsMarcup = createListItemsMarcup(tech);
 
-// console.log(listItemsMarcup);
+// // console.log(listItemsMarcup);
 
-refs.list.innerHTML = listItemsMarcup;
+// refs.list.innerHTML = listItemsMarcup;
 
-refs.input.addEventListener("input", onFilterChange)
+// refs.input.addEventListener("input", onFilterChange)
 
-function onFilterChange (evt) {
-    const filter = evt.target.value.toLowerCase();
+// function onFilterChange (evt) {
+//     const filter = evt.target.value.toLowerCase();
     
-    const filterItems = tech.filter(t =>
-        t.label.toLowerCase().includes(filter));
-    const listItemsMarcup = createListItemsMarcup(filterItems);
-    console.log(listItemsMarcup);
+//     const filterItems = tech.filter(t =>
+//         t.label.toLowerCase().includes(filter));
+//     const listItemsMarcup = createListItemsMarcup(filterItems);
+//     console.log(listItemsMarcup);
 
-    refs.list.innerHTML = listItemsMarcup;
-}
+//     refs.list.innerHTML = listItemsMarcup;
+// }
