@@ -237,7 +237,7 @@
 // ];
 
 // const paletteContainer = document.querySelector('.js-palette');
-// const cardsMarkup = createColorCardsMarcup(colors); 
+// const cardsMarkup = createColorCardsMarcup(colors);
 
 // paletteContainer.insertAdjacentHTML('beforeend', cardsMarkup)
 
@@ -245,7 +245,7 @@
 
 // function createColorCardsMarcup(colors) {
 //   return colors.map(({hex, rgb}) => {
-//     return    `    
+//     return    `
 //      <div class="color-card">
 //         <div
 //           class="color-swatch"
@@ -259,7 +259,7 @@
 //         </div>
 //       </div> `;
 //   }).join('');
-// } 
+// }
 
 // function onPaletteContainerClick(evt) {
 //   if (!evt.target.classList.contains('color-swatch')) {
@@ -317,7 +317,7 @@
 
 // const container = document.querySelector('.js-container')
 
-// const marcup = cars.map(({img, car, id}) => 
+// const marcup = cars.map(({img, car, id}) =>
 // `<li data-car-id=${id} class="js-target js-card">
 // <img class="js-target" src="${img}" alt="${car}" width="200">
 // <h2 class="js-target">${car}</h2>
@@ -345,4 +345,137 @@
 // `);
 // instance.show()
 // }
+//==========================debounce=============
+// const input = document.querySelector('.js-input');
 
+// const PASSWORD_LENGTH = 7;
+// input.addEventListener('input', _.debounce(onSearch, 800, {
+//     // leading: false, це за замовчуванням
+//     trailing: true
+// }));
+
+// function onSearch(evt) {
+//     console.log(evt.target.value);
+//     if (evt.target.value.trim().length < PASSWORD_LENGTH) {
+//         evt.target.classList.remove('valid')
+//         evt.target.classList.add('invalid')
+//     } else {
+//         evt.target.classList.remove('invalid')
+//           evt.target.classList.add('valid')
+//     }
+//   }
+//.============================================
+// // Створити функцію, яка приймає 1 параметр масив продуктів і повертає муто ваний масив.
+// const products = [
+//     {
+//     id: 'sku1',
+//     qty: 1,
+//     },
+//     {
+//     id: 'sku2',
+//     qty: 2,
+//     },
+//     {
+//     id: 'sku3',
+//     qty: 3,
+//     },
+//     {
+//     id: 'sku1',
+//     qty: 6,
+//     },
+//      {
+//     id: 'sku1',
+//     qty: 8,
+//     },
+//      {
+//     id: 'sku2',
+//     qty: 19,
+//     },
+//      {
+//     id: 'sku4',
+//     qty: 1,
+//     },
+// ]
+ 
+// function sortProduct(arr) {
+//     for (let i = 0; i < arr.length; i += 1) {
+      
+//         for (let j = i + 1; j < arr.length; j += 1) {
+//             if (arr[i].id === arr[j].id) {
+//                 arr[i].qty += arr[j].qty;
+//                 arr.splice(j, 1);
+//                 j -= 1;
+//             }
+//         }
+//     }
+// }
+// sortProduct(products);
+// console.log(products);
+//===========================================
+//У кожному масиві є унікальний рядок, у якому не повторюються літери. Знайдіть і виведіть цей рядок
+
+// function findUniq(arr) {
+//     for (let i = 0; i < arr.length; i += 1) {
+//         const result = arr[i].split('').every(item => {
+//             for (let j = 0; j < arr.length; j += 1) {
+//                 if (i !== j) {
+//                     if (!arr[j].includes(item)) {
+//                         return true;
+//                     } else {
+//                         return false
+//                     }
+//                 }
+//             }
+//         });
+//         if (result) {
+//            return arr[i]
+//        }
+//     }
+// }
+
+// console.log(findUniq(['abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba'])); // === "foo"
+// console.log(findUniq(['fghj', 'ghfj', 'abcd', 'jhgf', 'fghj', 'fgjh', 'ghif'])); // === "abcd"
+// console.log(findUniq(['qwe', 'camp', 'acmp', 'pmac', 'camp', 'apmc', 'pmac'])); // === "qwe "
+//==================================================
+const tech = [
+    { label: 'HTML' },
+    { label: 'CSS' },
+    { label: 'JavaScript' },
+    { label: 'Node.js' },
+    { label: 'Vue' },
+    { label: 'Next.js' },
+    { label: 'Mobx' },
+    { label: 'Redux' },
+    { label: 'React Rouder' },
+    { label: 'GraphQl' },
+    { label: 'PostgreSQL' },
+    { label: 'MangoDB' },
+];
+
+const refs = {
+    list: document.querySelector('.js-list'),
+    input: document.querySelector('#filter'),
+};
+
+function createListItemsMarcup(items) {
+    return items.map(item => `<li>${item.label}</li>`).join('')
+};
+
+const listItemsMarcup = createListItemsMarcup(tech);
+
+// console.log(listItemsMarcup);
+
+refs.list.innerHTML = listItemsMarcup;
+
+refs.input.addEventListener("input", onFilterChange)
+
+function onFilterChange (evt) {
+    const filter = evt.target.value.toLowerCase();
+    
+    const filterItems = tech.filter(t =>
+        t.label.toLowerCase().includes(filter));
+    const listItemsMarcup = createListItemsMarcup(filterItems);
+    console.log(listItemsMarcup);
+
+    refs.list.innerHTML = listItemsMarcup;
+}

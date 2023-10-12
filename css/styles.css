@@ -63,7 +63,7 @@ background-color: blue;
     width: 100px;
     height: 100px;
 } */
-ul {
+/* ul {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -83,4 +83,13 @@ img {
 h2 {
     padding: 0px;
     margin: 0px;
+} */
+.valid {
+    border-color: green;
+}
+.invalid {
+border-color: red;
+}
+input {
+    outline: none;
 }
