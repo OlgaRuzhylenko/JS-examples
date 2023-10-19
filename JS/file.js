@@ -2586,7 +2586,7 @@ const cars = [
 
 // const objB = {
 //   age: 12,
-//   //це те ж саме, що і 
+//   //це те ж саме, що і
 //   //someFunction: {
 //     // const test = () => {
 //     //   console.log(this);
@@ -2725,7 +2725,7 @@ const cars = [
 // topics - масив тем, на яких спеціалізується блогер
 // Клас чекає 1 параметр - об'єкт наалштувань з однойменними властивостями
 
-// Додай метод getInfo(), який повертає рядок: User ${пошта} is ${вік} years old and has ${к-ть постів} posts 
+// Додай метод getInfo(), який повертає рядок: User ${пошта} is ${вік} years old and has ${к-ть постів} posts
 
 // Додай метод updatePostCount(value), який у параметрі value приймає к-ть постів, які потрібно додати користувачеві
 // class Blogger {
@@ -2851,9 +2851,9 @@ const cars = [
 // }
 // const red = makeChangeColor()
 // red()
-// console.log(red) 
+// console.log(red)
 
-// 2) 
+// 2)
 // const newObj = {
 //   a () {
 //     return this
@@ -2872,7 +2872,7 @@ const cars = [
 //     яка рахує та виводить у консоль кількість своїх викликів
 // const makeCounter = () => {
 //   let countCall = 0;
-//   return () => (countCall += 1); 
+//   return () => (countCall += 1);
 //  };
 // const currentCount = makeCounter();
 // console.log(currentCount());
@@ -2881,9 +2881,9 @@ const cars = [
 // console.log(currentCount());
 
 // 4. Замикання
-// // Напишіть функцію savePassword(password), яка приймає 
+// // Напишіть функцію savePassword(password), яка приймає
 // пароль та повертає внутрішню функцію,
-// //     яка приймає рядок та повертає 
+// //     яка приймає рядок та повертає
 // true, якщо рядок співпадає зі збереженим паролем,
 // //     та false - якщо не співпадає
 
@@ -2895,9 +2895,9 @@ const cars = [
 //  console.log(checkUser('qwe111'));
 
 // 5.
-// Напиши клас Client, який створює об"єкт із властивостями login та 
+// Напиши клас Client, який створює об"єкт із властивостями login та
 //email
-// оголоси приватні властивості #login #email, доступ до яких 
+// оголоси приватні властивості #login #email, доступ до яких
 //зроби через геттер та сеттер login email
 // class Client {
 //   #login;
@@ -2933,7 +2933,7 @@ const cars = [
 // Замітка - це об"єкт із властивостями text та priority
 // Додай класу статичну властивість Priopity,
 //     в якому буде зберігатися об"єкт з пріоритетами
-//     Додай методи addNote(note), removeNote(text), 
+//     Додай методи addNote(note), removeNote(text),
 //updatePriority(text, newPriority)
 
 // class Notes {
@@ -2948,7 +2948,7 @@ const cars = [
 //   this.items.push(note);
 // }
 // removeNote(text) {
-//   this.items = this.items.filter(note => note.text !== text); 
+//   this.items = this.items.filter(note => note.text !== text);
 // }
 // updatePriority(text, newPriority) {
 //   this.items = this.items.map(note => {
@@ -3005,4 +3005,45 @@ const cars = [
 //   console.log(birds);
 
 
+// // Напишіть програму, яка знаходить суму кожного числа від 1 до num. Число завжди буде додатним цілим числом, більшим за 0.
+// var summation = function (num) {
+//   let sum = 0;
+//   for (let i = 0; i <= num; i ++ ) {
+//     sum += i
+//   }
+//   return sum
+// }
+// let result = summation(5);
+// console.log(result);
+
+// // Ви отримуєте масив чисел, повертаєте суму всіх додатних.
+// // Example[1, -4, 7, 12] => 1 + 7 + 12 = 20
+// // Примітка: якщо немає нічого для підсумовування, сума за умовчанням дорівнює 0.
+
+// function positiveSum(arr) {
+//   let sum = 0;
+//   arr.forEach((item) => {
+//     if (item > 0) {
+//       sum += item;
+//     }
+//   })
+// return sum
+// }
+
+// console.log(positiveSum([1,-4,7,12]));
+
+// Напишіть функцію bmi, яка обчислює індекс маси тіла(bmi = вага / зріст2).
+// if bmi <= 18.5 return "Underweight"
+
+// if bmi <= 25.0 return "Normal"
+
+// if bmi <= 30.0 return "Overweight"
+
+// if bmi > 30 return "Obese"
+
+function bmi(weight, height) {
+  let bmi = 0;
+  bmi = weight / (height * height)
+  return "";
+}
 
