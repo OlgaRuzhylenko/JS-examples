@@ -56,11 +56,32 @@ firstDiv.append(title, list, addButton);
 function renderList() {
     const markup = books.map(({title, id}) => {
         return `<li id="${id}">
-        <p>${title}</p>
+        <p class="book-title">${title}</p>
         <button class="delete">Delete</button>
         <button class="edit">Edit</button>
         </li>`}).join(''); 
 //    list.insertAdjacentHTML('afterbegin', markup)
 list.innerHTML = markup;
+const titles = document.querySelectorAll('.book-title');
+titles.forEach(title => title.addEventListener('click', renderPreview))
+
 };
 renderList()
+
+function renderPreview (event) {
+   const bookTitle = event.target.textContent
+   const book = books.find(({title}) => title === bookTitle)
+   console.log(book);
+   const markup = createPreviewMarkup(book);
+   secondDiv.innerHTML = '';
+  secondDiv.insertAdjacentHTML('afterbegin', markup)
+}
+
+function createPreviewMarkup ({id, title, author, img, plot}) {
+return `<div>
+<h2>${title}</h2>
+<p>${author}</p>
+<img src="${img}" alt="${title}">
+<p>${plot}</p>
+</div>`
+}
