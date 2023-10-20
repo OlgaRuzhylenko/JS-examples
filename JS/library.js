@@ -79,6 +79,10 @@ if (target.nodeName === 'P') {
     renderPreview(target)
 } else if (target.classList.contains('delete')) {
     deleteBook(target)
+} else if (target.classList.contains('edit')) {
+editBook(target)
+} else {
+  return
 }
 }
 
@@ -136,13 +140,13 @@ function addBook() {
   })
 }
 
-function createFormMarkup() {
+function createFormMarkup({title="", author="", img="", plot=""} = {}) {
   return `
     <form>
-    <label>Title: <input type="text" name="title"> </label>
-    <label>Author: <input type="text" name="author"> </label>
-    <label>Image: <input type="url" name="img"> </label>
-    <label>Plot: <input type="text" name="plot"> </label>
+    <label>Title: <input type="text" name="title" value="${title}"> </label>
+    <label>Author: <input type="text" name="author" value="${author}"> </label>
+    <label>Image: <input type="url" name="img" value="${img}"> </label>
+    <label>Plot: <input type="text" name="plot" value="${plot}"> </label>
     <button>Save</button>
     </form>
     `;
@@ -153,4 +157,23 @@ function fillObject(book) {
   inputs.forEach(input => input.addEventListener('change', () => {
 book[event.target.name] = event.target.value
   }))
+}
+
+function editBook(target) {
+  const bookId = target.parentNode.id;
+  const book = books.find(({ id }) => id === bookId);
+  console.log(book);
+  secondDiv.innerHTML = createFormMarkup(book);
+  fillObject(book);
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    console.log(book);
+const index = books.findIndex(({id}) => id === bookId)
+books[index] = book;
+    renderList();
+    const markup = createPreviewMarkup(newBook);
+    secondDiv.innerHTML = "";
+  secondDiv.insertAdjacentHTML("afterbegin", markup);
+  })
 }
