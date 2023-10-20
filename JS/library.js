@@ -38,50 +38,119 @@ let books = [
        What tools does he need to use?`,
   },
 ];
-const root = document.querySelector('#root');
-const firstDiv = document.createElement('div');
-firstDiv.classList.add('leftDiv')
-const secondDiv = document.createElement('div');
-secondDiv.classList.add('rightDiv')
+const root = document.querySelector("#root");
+const firstDiv = document.createElement("div");
+firstDiv.classList.add("leftDiv");
+const secondDiv = document.createElement("div");
+secondDiv.classList.add("rightDiv");
 
 root.append(firstDiv, secondDiv);
 
-const title = document.createElement('h1')
-title.textContent = "Library"
-const list = document.createElement('ul')
-const addButton = document.createElement('button')
-addButton.textContent = 'Add book'
+const title = document.createElement("h1");
+title.textContent = "Library";
+const list = document.createElement("ul");
+const addButton = document.createElement("button");
+addButton.textContent = "Add book";
 firstDiv.append(title, list, addButton);
 
+addButton.addEventListener("click", addBook);
+
 function renderList() {
-    const markup = books.map(({title, id}) => {
-        return `<li id="${id}">
+  const markup = books
+    .map(({ title, id }) => {
+      return `<li id="${id}">
         <p class="book-title">${title}</p>
         <button class="delete">Delete</button>
         <button class="edit">Edit</button>
-        </li>`}).join(''); 
-//    list.insertAdjacentHTML('afterbegin', markup)
-list.innerHTML = markup;
-const titles = document.querySelectorAll('.book-title');
-titles.forEach(title => title.addEventListener('click', renderPreview))
+        </li>`;
+    })
+    .join("");
+  //    list.insertAdjacentHTML('afterbegin', markup)
+  list.innerHTML = markup;
+//   const titles = document.querySelectorAll(".book-title");
+//   titles.forEach((title) => title.addEventListener("click", renderPreview));
+//   const deleteBtns = document.querySelectorAll(".delete");
+//   deleteBtns.forEach((btn) => btn.addEventListener("click", deleteBook));
+}
+list.addEventListener('click', handleClick)
 
-};
-renderList()
-
-function renderPreview (event) {
-   const bookTitle = event.target.textContent
-   const book = books.find(({title}) => title === bookTitle)
-   console.log(book);
-   const markup = createPreviewMarkup(book);
-   secondDiv.innerHTML = '';
-  secondDiv.insertAdjacentHTML('afterbegin', markup)
+function handleClick ({target}) {
+if (target.nodeName === 'P') {
+    renderPreview(target)
+} else if (target.classList.contains('delete')) {
+    deleteBook(target)
+}
 }
 
-function createPreviewMarkup ({id, title, author, img, plot}) {
-return `<div>
+renderList();
+
+function renderPreview(target) {
+  const bookTitle = target.textContent;
+  const book = books.find(({ title }) => title === bookTitle);
+  console.log(book);
+  const markup = createPreviewMarkup(book);
+  secondDiv.innerHTML = "";
+  secondDiv.insertAdjacentHTML("afterbegin", markup);
+}
+
+function createPreviewMarkup({ id, title, author, img, plot }) {
+  return `<div data-id="${id}" class="book-info">
 <h2>${title}</h2>
 <p>${author}</p>
 <img src="${img}" alt="${title}">
 <p>${plot}</p>
-</div>`
+</div>`;
+}
+
+function deleteBook(target) {
+  const bookId = target.parentNode.id;
+  books = books.filter(({ id }) => id !== bookId);
+  renderList();
+  const bookInfo = document.querySelector(".book-info");
+
+  if (bookInfo && bookInfo.dataset.id === bookId) {
+    secondDiv.innerHTML = "";
+  }
+}
+
+function addBook() {
+  const markup = createFormMarkup();
+  secondDiv.innerHTML = markup;
+  const newBook = {
+    id: Date.now(),
+    title: "",
+    author: "",
+    img: "",
+    plot: "",
+  };
+  fillObject(newBook);
+  const form = document.querySelector('form')
+  form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    // console.log(newBook);
+    books.push(newBook)
+    renderList();
+    const markup = createPreviewMarkup(newBook);
+    secondDiv.innerHTML = "";
+  secondDiv.insertAdjacentHTML("afterbegin", markup);
+  })
+}
+
+function createFormMarkup() {
+  return `
+    <form>
+    <label>Title: <input type="text" name="title"> </label>
+    <label>Author: <input type="text" name="author"> </label>
+    <label>Image: <input type="url" name="img"> </label>
+    <label>Plot: <input type="text" name="plot"> </label>
+    <button>Save</button>
+    </form>
+    `;
+}
+
+function fillObject(book) {
+  const inputs = document.querySelectorAll("input");
+  inputs.forEach(input => input.addEventListener('change', () => {
+book[event.target.name] = event.target.value
+  }))
 }
