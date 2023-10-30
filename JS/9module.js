@@ -24,9 +24,8 @@
 //     refs.notification.classList.remove('is-visible')
 // }
 
-const date1 = new Date('2023-01-01 01:00:00');
-console.log(date1);
+// const date1 = new Date('2023-01-01 01:00:00');
+// console.log(date1);
 
-date1.setDate(-500000000)
-console.log(date1);
-
+// date1.setDate(-500000000)
+// console.log(date1);
